@@ -1,0 +1,42 @@
+@page
+@model BibliotecaWeb.Pages.Libros.IndexModel
+@{
+    ViewData["Title"] = "Libros";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h2>Libros</h2>
+    <a asp-page="/Libros/Create" class="btn btn-success">Nuevo libro</a>
+</div>
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Titulo</th>
+            <th>Autor</th>
+            <th>Paginas</th>
+            <th>Genero</th>
+            <th>Fecha Publicacion</th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var libro in Model.Libros)
+        {
+            <tr>
+                <td>@libro.Titulo</td>
+                <td>@($"{libro.Autor?.Nombre} {libro.Autor?.Apellidos}")</td>
+                <td>@libro.NumeroPaginas</td>
+                <td>@libro.Genero?.Nombre</td>
+                <td>@libro.FechaPublicacion?.ToString("yyyy-MM-dd")</td>
+                <td><a asp-page="/Libros/Create" asp-route-id="@libro.IdLibro" class="btn btn-warning btn-sm">Editar</a></td>
+                <td>
+                    <form method="post" asp-page-handler="Delete" asp-route-id="@libro.IdLibro">
+                        <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

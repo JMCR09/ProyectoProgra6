@@ -1,0 +1,49 @@
+@page "{id:int}"
+@model BibliotecaWeb.Pages.Prestamos.EstadoModel
+@{
+    ViewData["Title"] = "Cambiar Estado del Prestamo";
+}
+
+<h2>Cambiar Estado del Prestamo</h2>
+
+<div class="card mb-3">
+    <div class="card-body">
+        <p><strong>Usuario:</strong> @Model.NombreUsuario</p>
+        <p><strong>Libro:</strong> @Model.TituloLibro</p>
+        <p><strong>Fecha Prestamo:</strong> @Model.Prestamo.FechaPrestamo?.ToString("yyyy-MM-dd")</p>
+        <p><strong>Fecha Devolucion Programada:</strong> @Model.Prestamo.FechaDevolucion?.ToString("yyyy-MM-dd")</p>
+    </div>
+</div>
+
+<form method="post">
+    <input type="hidden" asp-for="Prestamo.IdPrestamo" />
+    <input type="hidden" asp-for="Prestamo.IdUsuario" />
+    <input type="hidden" asp-for="Prestamo.IdLibro" />
+    <input type="hidden" asp-for="Prestamo.FechaPrestamo" />
+    <input type="hidden" asp-for="Prestamo.FechaDevolucion" />
+
+    <div class="mb-3">
+        <label asp-for="Prestamo.Estado" class="form-label"></label>
+        <select asp-for="Prestamo.Estado" class="form-select">
+            <option value="Pendiente">Pendiente</option>
+            <option value="Devuelto">Devuelto</option>
+            <option value="Cancelado">Cancelado</option>
+        </select>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Prestamo.Comentarios" class="form-label"></label>
+        <textarea asp-for="Prestamo.Comentarios" class="form-control" rows="4"></textarea>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Prestamo.FechaDevolucionEfectiva" class="form-label"></label>
+        <input asp-for="Prestamo.FechaDevolucionEfectiva"
+               type="date"
+               class="form-control"
+               min="@Model.MinFechaDevolucionEfectiva" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Guardar cambios</button>
+    <a asp-page="/Prestamos/Index" class="btn btn-secondary">Volver</a>
+</form>

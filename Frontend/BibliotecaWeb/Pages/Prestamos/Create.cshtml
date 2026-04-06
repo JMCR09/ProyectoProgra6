@@ -1,0 +1,102 @@
+@page "{id:int?}"
+@model BibliotecaWeb.Pages.Prestamos.CreateModel
+@{
+    ViewData["Title"] = Model.Prestamo.IdPrestamo == 0 ? "Crear Prestamo" : "Editar Prestamo";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<form method="post">
+    <input type="hidden" asp-for="Prestamo.IdPrestamo" />
+    <div class="mb-3">
+        <label asp-for="Prestamo.IdUsuario" class="form-label">Usuario</label>
+        <select asp-for="Prestamo.IdUsuario" class="form-select">
+            <option value="">Seleccione un usuario</option>
+            @foreach (var usuario in Model.Usuarios)
+            {
+                <option value="@usuario.IdUsuario">@usuario.Nombre @usuario.Apellidos</option>
+            }
+        </select>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Prestamo.IdLibro" class="form-label">Libro</label>
+        <select asp-for="Prestamo.IdLibro" class="form-select">
+            <option value="">Seleccione un libro</option>
+            @foreach (var libro in Model.Libros)
+            {
+                <option value="@libro.IdLibro">@libro.Titulo</option>
+            }
+        </select>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Prestamo.FechaPrestamo" class="form-label"></label>
+        <input asp-for="Prestamo.FechaPrestamo" type="date" class="form-control" id="fechaPrestamo" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="Prestamo.FechaDevolucion" class="form-label"></label>
+        <input asp-for="Prestamo.FechaDevolucion"
+               type="date"
+               class="form-control"
+               id="fechaDevolucion"
+               min="@Model.MinFechaDevolucion"
+               max="@Model.MaxFechaDevolucion" />
+        <div class="form-text">
+            Solo se permiten fechas dentro de los 30 dias posteriores a la fecha de prestamo.
+        </div>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Prestamo.Estado" class="form-label"></label>
+        <select asp-for="Prestamo.Estado" class="form-select">
+            <option value="Pendiente">Pendiente</option>
+            <option value="Devuelto">Devuelto</option>
+            <option value="Cancelado">Cancelado</option>
+        </select>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Prestamo.Comentarios" class="form-label"></label>
+        <textarea asp-for="Prestamo.Comentarios" class="form-control"></textarea>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Prestamo.FechaDevolucionEfectiva" class="form-label"></label>
+        <input asp-for="Prestamo.FechaDevolucionEfectiva" type="date" class="form-control" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Guardar</button>
+    <a asp-page="/Prestamos/Index" class="btn btn-secondary">Cancelar</a>
+</form>
+
+@section Scripts {
+    <script>
+        const fechaPrestamo = document.getElementById("fechaPrestamo");
+        const fechaDevolucion = document.getElementById("fechaDevolucion");
+
+        function formatearFecha(fecha) {
+            const year = fecha.getFullYear();
+            const month = String(fecha.getMonth() + 1).padStart(2, "0");
+            const day = String(fecha.getDate()).padStart(2, "0");
+            return `${year}-${month}-${day}`;
+        }
+
+        function actualizarRangoDevolucion() {
+            if (!fechaPrestamo.value) {
+                fechaDevolucion.min = "";
+                fechaDevolucion.max = "";
+                return;
+            }
+
+            const base = new Date(`${fechaPrestamo.value}T00:00:00`);
+            const max = new Date(base);
+            max.setDate(max.getDate() + 30);
+
+            fechaDevolucion.min = formatearFecha(base);
+            fechaDevolucion.max = formatearFecha(max);
+
+            if (fechaDevolucion.value && (fechaDevolucion.value < fechaDevolucion.min || fechaDevolucion.value > fechaDevolucion.max)) {
+                fechaDevolucion.value = "";
+            }
+        }
+
+        fechaPrestamo.addEventListener("change", actualizarRangoDevolucion);
+        actualizarRangoDevolucion();
+    </script>
+}

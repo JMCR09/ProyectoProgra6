@@ -1,0 +1,38 @@
+@page "{id:int?}"
+@model BibliotecaWeb.Pages.Usuarios.CreateModel
+@{
+    ViewData["Title"] = Model.Usuario.IdUsuario == 0 ? "Crear Usuario" : "Editar Usuario";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<form method="post">
+    <input type="hidden" asp-for="Usuario.IdUsuario" />
+    <div class="mb-3">
+        <label asp-for="Usuario.Cedula" class="form-label"></label>
+        <input asp-for="Usuario.Cedula" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="Usuario.Nombre" class="form-label"></label>
+        <input asp-for="Usuario.Nombre" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="Usuario.Apellidos" class="form-label"></label>
+        <input asp-for="Usuario.Apellidos" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="Usuario.Telefono" class="form-label"></label>
+        <input asp-for="Usuario.Telefono" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="Usuario.Direccion" class="form-label"></label>
+        <input asp-for="Usuario.Direccion" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="Usuario.FechaNacimiento" class="form-label"></label>
+        <input asp-for="Usuario.FechaNacimiento" type="date" class="form-control" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Guardar</button>
+    <a asp-page="/Usuarios/Index" class="btn btn-secondary">Cancelar</a>
+</form>

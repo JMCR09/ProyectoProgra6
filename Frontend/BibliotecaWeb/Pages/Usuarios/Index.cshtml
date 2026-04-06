@@ -1,0 +1,44 @@
+@page
+@model BibliotecaWeb.Pages.Usuarios.IndexModel
+@{
+    ViewData["Title"] = "Usuarios";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h2>Usuarios</h2>
+    <a asp-page="/Usuarios/Create" class="btn btn-success">Nuevo usuario</a>
+</div>
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Cedula</th>
+            <th>Nombre</th>
+            <th>Apellidos</th>
+            <th>Telefono</th>
+            <th>Direccion</th>
+            <th>Fecha Nacimiento</th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var usuario in Model.Usuarios)
+        {
+            <tr>
+                <td>@usuario.Cedula</td>
+                <td>@usuario.Nombre</td>
+                <td>@usuario.Apellidos</td>
+                <td>@usuario.Telefono</td>
+                <td>@usuario.Direccion</td>
+                <td>@usuario.FechaNacimiento?.ToString("yyyy-MM-dd")</td>
+                <td><a asp-page="/Usuarios/Create" asp-route-id="@usuario.IdUsuario" class="btn btn-warning btn-sm">Editar</a></td>
+                <td>
+                    <form method="post" asp-page-handler="Delete" asp-route-id="@usuario.IdUsuario">
+                        <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,67 @@
+@page
+@model BibliotecaWeb.Pages.Prestamos.IndexModel
+@{
+    ViewData["Title"] = "Prestamos";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h2>Prestamos</h2>
+    <a asp-page="/Prestamos/Create" class="btn btn-success">Nuevo prestamo</a>
+</div>
+
+<form method="get" class="row g-3 mb-4">
+    <div class="col-md-4">
+        <label asp-for="FiltroLibro" class="form-label">Filtrar por libro</label>
+        <input asp-for="FiltroLibro" class="form-control" placeholder="Nombre del libro" />
+    </div>
+    <div class="col-md-4">
+        <label asp-for="FiltroUsuario" class="form-label">Filtrar por usuario</label>
+        <input asp-for="FiltroUsuario" class="form-control" placeholder="Nombre del usuario" />
+    </div>
+    <div class="col-md-3">
+        <label asp-for="FiltroFecha" class="form-label">Filtrar por fecha</label>
+        <input asp-for="FiltroFecha" type="date" class="form-control" />
+    </div>
+    <div class="col-md-1 d-flex align-items-end">
+        <button type="submit" class="btn btn-primary w-100">Buscar</button>
+    </div>
+    <div class="col-12">
+        <a asp-page="/Prestamos/Index" class="btn btn-secondary">Limpiar filtros</a>
+    </div>
+</form>
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Usuario</th>
+            <th>Libro</th>
+            <th>Fecha Prestamo</th>
+            <th>Fecha Devolucion</th>
+            <th>Estado</th>
+            <th>Comentarios</th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var prestamo in Model.Prestamos)
+        {
+            <tr>
+                <td>@($"{prestamo.Usuario?.Nombre} {prestamo.Usuario?.Apellidos}")</td>
+                <td>@prestamo.Libro?.Titulo</td>
+                <td>@prestamo.FechaPrestamo?.ToString("yyyy-MM-dd")</td>
+                <td>@prestamo.FechaDevolucion?.ToString("yyyy-MM-dd")</td>
+                <td>@prestamo.Estado</td>
+                <td>@prestamo.Comentarios</td>
+                <td><a asp-page="/Prestamos/Create" asp-route-id="@prestamo.IdPrestamo" class="btn btn-warning btn-sm">Editar</a></td>
+                <td><a asp-page="/Prestamos/Estado" asp-route-id="@prestamo.IdPrestamo" class="btn btn-info btn-sm">Cambiar estado</a></td>
+                <td>
+                    <form method="post" asp-page-handler="Delete" asp-route-id="@prestamo.IdPrestamo">
+                        <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

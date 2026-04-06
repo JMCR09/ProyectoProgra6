@@ -1,0 +1,34 @@
+@page
+@model BibliotecaWeb.Pages.Generos.IndexModel
+@{
+    ViewData["Title"] = "Generos";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h2>Generos</h2>
+    <a asp-page="/Generos/Create" class="btn btn-success">Nuevo genero</a>
+</div>
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var genero in Model.Generos)
+        {
+            <tr>
+                <td>@genero.Nombre</td>
+                <td><a asp-page="/Generos/Create" asp-route-id="@genero.IdGenero" class="btn btn-warning btn-sm">Editar</a></td>
+                <td>
+                    <form method="post" asp-page-handler="Delete" asp-route-id="@genero.IdGenero">
+                        <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
