@@ -22,4 +22,3 @@ public class Autor
     [JsonIgnore]
     public virtual ICollection<Libro> Libros { get; set; } = new List<Libro>();
 }
-//Prueba de github
