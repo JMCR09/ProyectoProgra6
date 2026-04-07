@@ -1,3 +1,12 @@
+
+/*
+ * Creado por: Jose Miguel Salas Chacon
+ * Usuarios.cs - Modelo de datos para la entidad Usuario
+ * 
+ */
+
+
+
 using BibliotecaApi.Models;
 using BibliotecaApi.Services;
 using Microsoft.AspNetCore.Mvc;
@@ -8,7 +17,7 @@ namespace BibliotecaApi.Controllers;
 [Route("[controller]")]
 public class UsuariosController : ControllerBase
 {
-    //Prueba de subida al github comentado en el codigo
+
 
     // Servicio para la logica de usuarios
     private readonly UsuarioService _usuarioService;
