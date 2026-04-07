@@ -27,13 +27,22 @@ public class UsuarioService
 
     // Metodo para crear un nuevo usuario
     public async Task AddAsync(Usuario usuario)
-        => await _httpClient.PostAsJsonAsync("/Usuarios", usuario);
+    {
+        var response = await _httpClient.PostAsJsonAsync("/Usuarios", usuario);
+        response.EnsureSuccessStatusCode();
+    }
 
     // Metodo para actualizar un usuario existente
     public async Task UpdateAsync(Usuario usuario)
-        => await _httpClient.PutAsJsonAsync($"/Usuarios/{usuario.IdUsuario}", usuario);
+    {
+        var response = await _httpClient.PutAsJsonAsync($"/Usuarios/{usuario.IdUsuario}", usuario);
+        response.EnsureSuccessStatusCode();
+    }
 
     // Metodo para eliminar un usuario por Id
     public async Task DeleteAsync(int id)
-        => await _httpClient.DeleteAsync($"/Usuarios/{id}");
+    {
+        var response = await _httpClient.DeleteAsync($"/Usuarios/{id}");
+        response.EnsureSuccessStatusCode();
+    }
 }

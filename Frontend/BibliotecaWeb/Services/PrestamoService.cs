@@ -27,13 +27,22 @@ public class PrestamoService
 
     // Metodo para crear un nuevo prestamo
     public async Task AddAsync(Prestamo prestamo)
-        => await _httpClient.PostAsJsonAsync("/Prestamos", prestamo);
+    {
+        var response = await _httpClient.PostAsJsonAsync("/Prestamos", prestamo);
+        response.EnsureSuccessStatusCode();
+    }
 
     // Metodo para actualizar un prestamo existente
     public async Task UpdateAsync(Prestamo prestamo)
-        => await _httpClient.PutAsJsonAsync($"/Prestamos/{prestamo.IdPrestamo}", prestamo);
+    {
+        var response = await _httpClient.PutAsJsonAsync($"/Prestamos/{prestamo.IdPrestamo}", prestamo);
+        response.EnsureSuccessStatusCode();
+    }
 
     // Metodo para eliminar un prestamo por Id
     public async Task DeleteAsync(int id)
-        => await _httpClient.DeleteAsync($"/Prestamos/{id}");
+    {
+        var response = await _httpClient.DeleteAsync($"/Prestamos/{id}");
+        response.EnsureSuccessStatusCode();
+    }
 }

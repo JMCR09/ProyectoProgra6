@@ -27,13 +27,22 @@ public class GeneroService
 
     // Metodo para crear un nuevo genero
     public async Task AddAsync(Genero genero)
-        => await _httpClient.PostAsJsonAsync("/Generos", genero);
+    {
+        var response = await _httpClient.PostAsJsonAsync("/Generos", genero);
+        response.EnsureSuccessStatusCode();
+    }
 
     // Metodo para actualizar un genero existente
     public async Task UpdateAsync(Genero genero)
-        => await _httpClient.PutAsJsonAsync($"/Generos/{genero.IdGenero}", genero);
+    {
+        var response = await _httpClient.PutAsJsonAsync($"/Generos/{genero.IdGenero}", genero);
+        response.EnsureSuccessStatusCode();
+    }
 
     // Metodo para eliminar un genero por Id
     public async Task DeleteAsync(int id)
-        => await _httpClient.DeleteAsync($"/Generos/{id}");
+    {
+        var response = await _httpClient.DeleteAsync($"/Generos/{id}");
+        response.EnsureSuccessStatusCode();
+    }
 }

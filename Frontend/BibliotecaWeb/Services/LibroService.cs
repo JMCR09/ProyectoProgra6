@@ -27,13 +27,22 @@ public class LibroService
 
     // Metodo para crear un nuevo libro
     public async Task AddAsync(Libro libro)
-        => await _httpClient.PostAsJsonAsync("/Libros", libro);
+    {
+        var response = await _httpClient.PostAsJsonAsync("/Libros", libro);
+        response.EnsureSuccessStatusCode();
+    }
 
     // Metodo para actualizar un libro existente
     public async Task UpdateAsync(Libro libro)
-        => await _httpClient.PutAsJsonAsync($"/Libros/{libro.IdLibro}", libro);
+    {
+        var response = await _httpClient.PutAsJsonAsync($"/Libros/{libro.IdLibro}", libro);
+        response.EnsureSuccessStatusCode();
+    }
 
     // Metodo para eliminar un libro por Id
     public async Task DeleteAsync(int id)
-        => await _httpClient.DeleteAsync($"/Libros/{id}");
+    {
+        var response = await _httpClient.DeleteAsync($"/Libros/{id}");
+        response.EnsureSuccessStatusCode();
+    }
 }

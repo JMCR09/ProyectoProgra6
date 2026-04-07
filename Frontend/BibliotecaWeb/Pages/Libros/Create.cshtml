@@ -1,14 +1,15 @@
-@page
+@page "{id:int?}"
 @model BibliotecaWeb.Pages.Libros.CreateModel
 @{
-    ViewData["Title"] = "Registrar Nuevo Libro";
+    ViewData["Title"] = Model.Libro.IdLibro == 0 ? "Registrar Nuevo Libro" : "Editar Libro";
+    var esCreacion = Model.Libro.IdLibro == 0;
 }
 
 <div class="mb-4">
     <h1>
-        <i class="fas fa-plus-circle"></i> Registrar Nuevo Libro
+        <i class="fas @(esCreacion ? "fa-plus-circle" : "fa-edit")"></i> @(esCreacion ? "Registrar Nuevo Libro" : "Editar Libro")
     </h1>
-    <p class="text-muted">Complete los datos del libro para agregarlo al catálogo.</p>
+    <p class="text-muted">@(esCreacion ? "Complete los datos del libro para agregarlo al catÃ¡logo." : "Modifique los datos del libro seleccionado.")</p>
 </div>
 
 <div class="row">
@@ -19,13 +20,14 @@
             </div>
             <div class="card-body">
                 <form method="post">
+                    <input type="hidden" asp-for="Libro.IdLibro" />
                     <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
 
                     <div class="mb-3">
                         <label asp-for="Libro.Titulo" class="form-label">
-                            <i class="fas fa-heading"></i> Título
+                            <i class="fas fa-heading"></i> TÃ­tulo
                         </label>
-                        <input asp-for="Libro.Titulo" class="form-control" placeholder="Ingrese el título del libro" />
+                        <input asp-for="Libro.Titulo" class="form-control" placeholder="Ingrese el tÃ­tulo del libro" />
                         <span asp-validation-for="Libro.Titulo" class="text-danger"></span>
                     </div>
 
@@ -46,10 +48,10 @@
 
                         <div class="col-md-6 mb-3">
                             <label asp-for="Libro.IdGenero" class="form-label">
-                                <i class="fas fa-tag"></i> Género
+                                <i class="fas fa-tag"></i> GÃ©nero
                             </label>
                             <select asp-for="Libro.IdGenero" class="form-select">
-                                <option value="">-- Seleccione un género --</option>
+                                <option value="">-- Seleccione un gÃ©nero --</option>
                                 @foreach (var genero in Model.Generos)
                                 {
                                     <option value="@genero.IdGenero">@genero.Nombre</option>
@@ -62,7 +64,7 @@
                     <div class="row">
                         <div class="col-md-6 mb-3">
                             <label asp-for="Libro.NumeroPaginas" class="form-label">
-                                <i class="fas fa-file-alt"></i> Número de Páginas
+                                <i class="fas fa-file-alt"></i> NÃºmero de PÃ¡ginas
                             </label>
                             <input asp-for="Libro.NumeroPaginas" class="form-control" type="number" placeholder="Ej: 350" />
                             <span asp-validation-for="Libro.NumeroPaginas" class="text-danger"></span>
@@ -70,7 +72,7 @@
 
                         <div class="col-md-6 mb-3">
                             <label asp-for="Libro.FechaPublicacion" class="form-label">
-                                <i class="fas fa-calendar-alt"></i> Fecha de Publicación
+                                <i class="fas fa-calendar-alt"></i> Fecha de PublicaciÃ³n
                             </label>
                             <input asp-for="Libro.FechaPublicacion" class="form-control" type="date" />
                             <span asp-validation-for="Libro.FechaPublicacion" class="text-danger"></span>
@@ -79,7 +81,7 @@
 
                     <div class="d-flex gap-2 mt-3">
                         <button type="submit" class="btn btn-primary">
-                            <i class="fas fa-save"></i> Guardar Libro
+                            <i class="fas fa-save"></i> @(esCreacion ? "Guardar Libro" : "Actualizar")
                         </button>
                         <a asp-page="Index" class="btn btn-outline-secondary">
                             <i class="fas fa-arrow-left"></i> Cancelar
@@ -97,8 +99,8 @@
             </div>
             <div class="card-body">
                 <p><i class="fas fa-check-circle text-granate"></i> Complete todos los campos obligatorios.</p>
-                <p><i class="fas fa-check-circle text-granate"></i> Verifique que el autor y género existan en el sistema.</p>
-                <p><i class="fas fa-check-circle text-granate"></i> La fecha de publicación debe ser válida.</p>
+                <p><i class="fas fa-check-circle text-granate"></i> Verifique que el autor y gÃ©nero existan en el sistema.</p>
+                <p><i class="fas fa-check-circle text-granate"></i> La fecha de publicaciÃ³n debe ser vÃ¡lida.</p>
                 <hr>
                 <small class="text-muted">
                     <i class="fas fa-info-circle"></i> Los campos marcados con * son obligatorios.

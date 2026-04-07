@@ -1,15 +1,15 @@
 @page
 @model BibliotecaWeb.Pages.Generos.IndexModel
 @{
-    ViewData["Title"] = "Gestión de Géneros Literarios";
+    ViewData["Title"] = "GestiÃ³n de GÃ©neros Literarios";
 }
 
 <div class="d-flex justify-content-between align-items-center mb-4">
     <h1>
-        <i class="fas fa-tags"></i> Gestión de Géneros Literarios
+        <i class="fas fa-tags"></i> GestiÃ³n de GÃ©neros Literarios
     </h1>
     <a asp-page="/Generos/Create" class="btn btn-primary">
-        <i class="fas fa-plus-circle"></i> Nuevo Género
+        <i class="fas fa-plus-circle"></i> Nuevo GÃ©nero
     </a>
 </div>
 
@@ -28,15 +28,15 @@
 
 <div class="card">
     <div class="card-header">
-        <i class="fas fa-list"></i> Lista de Géneros Literarios
+        <i class="fas fa-list"></i> Lista de GÃ©neros Literarios
     </div>
     <div class="card-body p-0">
         <table class="table table-hover mb-0">
             <thead>
-                32
-            <th><i class="fas fa-tag"></i> Nombre del Género</th>
-            <th colspan="2" style="width: 150px;"><i class="fas fa-cog"></i> Acciones</th>
-            </tr>
+                <tr>
+                    <th><i class="fas fa-tag"></i> Nombre del GÃ©nero</th>
+                    <th colspan="2" style="width: 150px;"><i class="fas fa-cog"></i> Acciones</th>
+                </tr>
             </thead>
             <tbody>
                 @foreach (var genero in Model.Generos)
@@ -46,12 +46,12 @@
                             <i class="fas fa-bookmark text-granate"></i> @genero.Nombre
                         </td>
                         <td class="text-center">
-                            <a asp-page="/Generos/Edit" asp-route-id="@genero.IdGenero" class="btn btn-warning btn-sm" title="Editar">
+                            <a asp-page="/Generos/Create" asp-route-id="@genero.IdGenero" class="btn btn-warning btn-sm" title="Editar">
                                 <i class="fas fa-edit"></i>
                             </a>
                         </td>
                         <td class="text-center">
-                            <form method="post" asp-page-handler="Delete" asp-route-id="@genero.IdGenero" onsubmit="return confirm('¿Está seguro de eliminar este género?');">
+                            <form method="post" asp-page-handler="Delete" asp-route-id="@genero.IdGenero" onsubmit="return confirm('Â¿EstÃ¡ seguro de eliminar este gÃ©nero?');">
                                 <button type="submit" class="btn btn-danger btn-sm" title="Eliminar">
                                     <i class="fas fa-trash-alt"></i>
                                 </button>
@@ -68,9 +68,9 @@
 {
     <div class="text-center py-5">
         <i class="fas fa-tags fa-3x text-muted mb-3"></i>
-        <p class="text-muted">No hay géneros literarios registrados en el sistema.</p>
+        <p class="text-muted">No hay gÃ©neros literarios registrados en el sistema.</p>
         <a asp-page="/Generos/Create" class="btn btn-primary">
-            <i class="fas fa-plus-circle"></i> Agregar el primer género
+            <i class="fas fa-plus-circle"></i> Agregar el primer gÃ©nero
         </a>
     </div>
 }

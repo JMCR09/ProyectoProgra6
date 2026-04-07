@@ -27,13 +27,22 @@ public class AutorService
 
     // Metodo para crear un nuevo autor
     public async Task AddAsync(Autor autor)
-        => await _httpClient.PostAsJsonAsync("/Autores", autor);
+    {
+        var response = await _httpClient.PostAsJsonAsync("/Autores", autor);
+        response.EnsureSuccessStatusCode();
+    }
 
     // Metodo para actualizar un autor existente
     public async Task UpdateAsync(Autor autor)
-        => await _httpClient.PutAsJsonAsync($"/Autores/{autor.IdAutor}", autor);
+    {
+        var response = await _httpClient.PutAsJsonAsync($"/Autores/{autor.IdAutor}", autor);
+        response.EnsureSuccessStatusCode();
+    }
 
     // Metodo para eliminar un autor por Id
     public async Task DeleteAsync(int id)
-        => await _httpClient.DeleteAsync($"/Autores/{id}");
+    {
+        var response = await _httpClient.DeleteAsync($"/Autores/{id}");
+        response.EnsureSuccessStatusCode();
+    }
 }

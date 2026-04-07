@@ -1,15 +1,15 @@
 @page
 @model BibliotecaWeb.Pages.Prestamos.IndexModel
 @{
-    ViewData["Title"] = "Gestión de Préstamos";
+    ViewData["Title"] = "GestiÃ³n de PrÃ©stamos";
 }
 
 <div class="d-flex justify-content-between align-items-center mb-4">
     <h1>
-        <i class="fas fa-hand-holding-heart"></i> Gestión de Préstamos
+        <i class="fas fa-hand-holding-heart"></i> GestiÃ³n de PrÃ©stamos
     </h1>
     <a asp-page="/Prestamos/Create" class="btn btn-primary">
-        <i class="fas fa-plus-circle"></i> Nuevo Préstamo
+        <i class="fas fa-plus-circle"></i> Nuevo PrÃ©stamo
     </a>
 </div>
 
@@ -26,10 +26,10 @@
     </div>
 }
 
-<!-- Filtros de búsqueda -->
+<!-- Filtros de bÃºsqueda -->
 <div class="card mb-4">
     <div class="card-header">
-        <i class="fas fa-search"></i> Buscar Préstamos
+        <i class="fas fa-search"></i> Buscar PrÃ©stamos
     </div>
     <div class="card-body">
         <form method="get">
@@ -67,10 +67,10 @@
     </div>
 </div>
 
-<!-- Tabla de préstamos -->
+<!-- Tabla de prÃ©stamos -->
 <div class="card">
     <div class="card-header">
-        <i class="fas fa-list"></i> Lista de Préstamos
+        <i class="fas fa-list"></i> Lista de PrÃ©stamos
     </div>
     <div class="card-body p-0">
         <div class="table-responsive">
@@ -79,8 +79,8 @@
                     <tr>
                         <th><i class="fas fa-user"></i> Usuario</th>
                         <th><i class="fas fa-book"></i> Libro</th>
-                        <th><i class="fas fa-calendar-plus"></i> Fecha Préstamo</th>
-                        <th><i class="fas fa-calendar-check"></i> Fecha Devolución</th>
+                        <th><i class="fas fa-calendar-plus"></i> Fecha PrÃ©stamo</th>
+                        <th><i class="fas fa-calendar-check"></i> Fecha DevoluciÃ³n</th>
                         <th><i class="fas fa-tag"></i> Estado</th>
                         <th><i class="fas fa-comment"></i> Comentarios</th>
                         <th colspan="3" style="width: 180px;"><i class="fas fa-cog"></i> Acciones</th>
@@ -130,7 +130,7 @@
                                 }
                             </td>
                             <td>
-                                <a asp-page="/Prestamos/Edit" asp-route-id="@prestamo.IdPrestamo" class="btn btn-warning btn-sm" title="Editar">
+                                <a asp-page="/Prestamos/Create" asp-route-id="@prestamo.IdPrestamo" class="btn btn-warning btn-sm" title="Editar">
                                     <i class="fas fa-edit"></i>
                                 </a>
                             </td>
@@ -140,7 +140,7 @@
                                 </a>
                             </td>
                             <td>
-                                <form method="post" asp-page-handler="Delete" asp-route-id="@prestamo.IdPrestamo" onsubmit="return confirm('¿Está seguro de eliminar este préstamo?');">
+                                <form method="post" asp-page-handler="Delete" asp-route-id="@prestamo.IdPrestamo" onsubmit="return confirm('Â¿EstÃ¡ seguro de eliminar este prÃ©stamo?');">
                                     <button type="submit" class="btn btn-danger btn-sm" title="Eliminar">
                                         <i class="fas fa-trash-alt"></i>
                                     </button>
@@ -158,9 +158,9 @@
 {
     <div class="text-center py-5">
         <i class="fas fa-hand-holding-heart fa-3x text-muted mb-3"></i>
-        <p class="text-muted">No hay préstamos registrados en el sistema.</p>
+        <p class="text-muted">No hay prÃ©stamos registrados en el sistema.</p>
         <a asp-page="/Prestamos/Create" class="btn btn-primary">
-            <i class="fas fa-plus-circle"></i> Registrar el primer préstamo
+            <i class="fas fa-plus-circle"></i> Registrar el primer prÃ©stamo
         </a>
     </div>
 }
