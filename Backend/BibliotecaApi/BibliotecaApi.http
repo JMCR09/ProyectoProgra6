@@ -1,0 +1,26 @@
+@BibliotecaApi_HostAddress = http://localhost:5222
+
+GET {{BibliotecaApi_HostAddress}}/Autores
+Accept: application/json
+
+###
+
+GET {{BibliotecaApi_HostAddress}}/Generos
+Accept: application/json
+
+###
+
+GET {{BibliotecaApi_HostAddress}}/Libros
+Accept: application/json
+
+###
+
+GET {{BibliotecaApi_HostAddress}}/Usuarios
+Accept: application/json
+
+###
+
+GET {{BibliotecaApi_HostAddress}}/Prestamos
+Accept: application/json
+
+###

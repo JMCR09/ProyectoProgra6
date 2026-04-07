@@ -1,0 +1,115 @@
+@page
+@model BibliotecaWeb.Pages.Libros.CreateModel
+@{
+    ViewData["Title"] = "Registrar Nuevo Libro";
+}
+
+<div class="mb-4">
+    <h1>
+        <i class="fas fa-plus-circle"></i> Registrar Nuevo Libro
+    </h1>
+    <p class="text-muted">Complete los datos del libro para agregarlo al catálogo.</p>
+</div>
+
+<div class="row">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-header">
+                <i class="fas fa-info-circle"></i> Datos del Libro
+            </div>
+            <div class="card-body">
+                <form method="post">
+                    <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
+
+                    <div class="mb-3">
+                        <label asp-for="Libro.Titulo" class="form-label">
+                            <i class="fas fa-heading"></i> Título
+                        </label>
+                        <input asp-for="Libro.Titulo" class="form-control" placeholder="Ingrese el título del libro" />
+                        <span asp-validation-for="Libro.Titulo" class="text-danger"></span>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label asp-for="Libro.IdAutor" class="form-label">
+                                <i class="fas fa-user"></i> Autor
+                            </label>
+                            <select asp-for="Libro.IdAutor" class="form-select">
+                                <option value="">-- Seleccione un autor --</option>
+                                @foreach (var autor in Model.Autores)
+                                {
+                                    <option value="@autor.IdAutor">@autor.Nombre @autor.Apellidos</option>
+                                }
+                            </select>
+                            <span asp-validation-for="Libro.IdAutor" class="text-danger"></span>
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+                            <label asp-for="Libro.IdGenero" class="form-label">
+                                <i class="fas fa-tag"></i> Género
+                            </label>
+                            <select asp-for="Libro.IdGenero" class="form-select">
+                                <option value="">-- Seleccione un género --</option>
+                                @foreach (var genero in Model.Generos)
+                                {
+                                    <option value="@genero.IdGenero">@genero.Nombre</option>
+                                }
+                            </select>
+                            <span asp-validation-for="Libro.IdGenero" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label asp-for="Libro.NumeroPaginas" class="form-label">
+                                <i class="fas fa-file-alt"></i> Número de Páginas
+                            </label>
+                            <input asp-for="Libro.NumeroPaginas" class="form-control" type="number" placeholder="Ej: 350" />
+                            <span asp-validation-for="Libro.NumeroPaginas" class="text-danger"></span>
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+                            <label asp-for="Libro.FechaPublicacion" class="form-label">
+                                <i class="fas fa-calendar-alt"></i> Fecha de Publicación
+                            </label>
+                            <input asp-for="Libro.FechaPublicacion" class="form-control" type="date" />
+                            <span asp-validation-for="Libro.FechaPublicacion" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="d-flex gap-2 mt-3">
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-save"></i> Guardar Libro
+                        </button>
+                        <a asp-page="Index" class="btn btn-outline-secondary">
+                            <i class="fas fa-arrow-left"></i> Cancelar
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-header">
+                <i class="fas fa-lightbulb"></i> Consejos
+            </div>
+            <div class="card-body">
+                <p><i class="fas fa-check-circle text-granate"></i> Complete todos los campos obligatorios.</p>
+                <p><i class="fas fa-check-circle text-granate"></i> Verifique que el autor y género existan en el sistema.</p>
+                <p><i class="fas fa-check-circle text-granate"></i> La fecha de publicación debe ser válida.</p>
+                <hr>
+                <small class="text-muted">
+                    <i class="fas fa-info-circle"></i> Los campos marcados con * son obligatorios.
+                </small>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

@@ -1,0 +1,229 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\paraj\\OneDrive\\Desktop\\UTC\\Programaci\u00F3n 6\\PROGRA Vl\\BibliotecaProyectoFinal\\Frontend\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{8AFB9338-8777-4DEC-BC7B-775458EA6D98}|BibliotecaWeb\\BibliotecaWeb.csproj|c:\\users\\paraj\\onedrive\\desktop\\utc\\programaci\u00F3n 6\\progra vl\\bibliotecaproyectofinal\\frontend\\bibliotecaweb\\pages\\usuarios\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8AFB9338-8777-4DEC-BC7B-775458EA6D98}|BibliotecaWeb\\BibliotecaWeb.csproj|solutionrelative:bibliotecaweb\\pages\\usuarios\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8AFB9338-8777-4DEC-BC7B-775458EA6D98}|BibliotecaWeb\\BibliotecaWeb.csproj|c:\\users\\paraj\\onedrive\\desktop\\utc\\programaci\u00F3n 6\\progra vl\\bibliotecaproyectofinal\\frontend\\bibliotecaweb\\pages\\usuarios\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8AFB9338-8777-4DEC-BC7B-775458EA6D98}|BibliotecaWeb\\BibliotecaWeb.csproj|solutionrelative:bibliotecaweb\\pages\\usuarios\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8AFB9338-8777-4DEC-BC7B-775458EA6D98}|BibliotecaWeb\\BibliotecaWeb.csproj|c:\\users\\paraj\\onedrive\\desktop\\utc\\programaci\u00F3n 6\\progra vl\\bibliotecaproyectofinal\\frontend\\bibliotecaweb\\pages\\prestamos\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8AFB9338-8777-4DEC-BC7B-775458EA6D98}|BibliotecaWeb\\BibliotecaWeb.csproj|solutionrelative:bibliotecaweb\\pages\\prestamos\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8AFB9338-8777-4DEC-BC7B-775458EA6D98}|BibliotecaWeb\\BibliotecaWeb.csproj|c:\\users\\paraj\\onedrive\\desktop\\utc\\programaci\u00F3n 6\\progra vl\\bibliotecaproyectofinal\\frontend\\bibliotecaweb\\pages\\prestamos\\estado.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8AFB9338-8777-4DEC-BC7B-775458EA6D98}|BibliotecaWeb\\BibliotecaWeb.csproj|solutionrelative:bibliotecaweb\\pages\\prestamos\\estado.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8AFB9338-8777-4DEC-BC7B-775458EA6D98}|BibliotecaWeb\\BibliotecaWeb.csproj|c:\\users\\paraj\\onedrive\\desktop\\utc\\programaci\u00F3n 6\\progra vl\\bibliotecaproyectofinal\\frontend\\bibliotecaweb\\pages\\prestamos\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8AFB9338-8777-4DEC-BC7B-775458EA6D98}|BibliotecaWeb\\BibliotecaWeb.csproj|solutionrelative:bibliotecaweb\\pages\\prestamos\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8AFB9338-8777-4DEC-BC7B-775458EA6D98}|BibliotecaWeb\\BibliotecaWeb.csproj|c:\\users\\paraj\\onedrive\\desktop\\utc\\programaci\u00F3n 6\\progra vl\\bibliotecaproyectofinal\\frontend\\bibliotecaweb\\pages\\generos\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8AFB9338-8777-4DEC-BC7B-775458EA6D98}|BibliotecaWeb\\BibliotecaWeb.csproj|solutionrelative:bibliotecaweb\\pages\\generos\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8AFB9338-8777-4DEC-BC7B-775458EA6D98}|BibliotecaWeb\\BibliotecaWeb.csproj|c:\\users\\paraj\\onedrive\\desktop\\utc\\programaci\u00F3n 6\\progra vl\\bibliotecaproyectofinal\\frontend\\bibliotecaweb\\pages\\generos\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8AFB9338-8777-4DEC-BC7B-775458EA6D98}|BibliotecaWeb\\BibliotecaWeb.csproj|solutionrelative:bibliotecaweb\\pages\\generos\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8AFB9338-8777-4DEC-BC7B-775458EA6D98}|BibliotecaWeb\\BibliotecaWeb.csproj|c:\\users\\paraj\\onedrive\\desktop\\utc\\programaci\u00F3n 6\\progra vl\\bibliotecaproyectofinal\\frontend\\bibliotecaweb\\pages\\autores\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8AFB9338-8777-4DEC-BC7B-775458EA6D98}|BibliotecaWeb\\BibliotecaWeb.csproj|solutionrelative:bibliotecaweb\\pages\\autores\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8AFB9338-8777-4DEC-BC7B-775458EA6D98}|BibliotecaWeb\\BibliotecaWeb.csproj|c:\\users\\paraj\\onedrive\\desktop\\utc\\programaci\u00F3n 6\\progra vl\\bibliotecaproyectofinal\\frontend\\bibliotecaweb\\pages\\autores\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8AFB9338-8777-4DEC-BC7B-775458EA6D98}|BibliotecaWeb\\BibliotecaWeb.csproj|solutionrelative:bibliotecaweb\\pages\\autores\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8AFB9338-8777-4DEC-BC7B-775458EA6D98}|BibliotecaWeb\\BibliotecaWeb.csproj|c:\\users\\paraj\\onedrive\\desktop\\utc\\programaci\u00F3n 6\\progra vl\\bibliotecaproyectofinal\\frontend\\bibliotecaweb\\pages\\libros\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8AFB9338-8777-4DEC-BC7B-775458EA6D98}|BibliotecaWeb\\BibliotecaWeb.csproj|solutionrelative:bibliotecaweb\\pages\\libros\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8AFB9338-8777-4DEC-BC7B-775458EA6D98}|BibliotecaWeb\\BibliotecaWeb.csproj|c:\\users\\paraj\\onedrive\\desktop\\utc\\programaci\u00F3n 6\\progra vl\\bibliotecaproyectofinal\\frontend\\bibliotecaweb\\pages\\libros\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8AFB9338-8777-4DEC-BC7B-775458EA6D98}|BibliotecaWeb\\BibliotecaWeb.csproj|solutionrelative:bibliotecaweb\\pages\\libros\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8AFB9338-8777-4DEC-BC7B-775458EA6D98}|BibliotecaWeb\\BibliotecaWeb.csproj|c:\\users\\paraj\\onedrive\\desktop\\utc\\programaci\u00F3n 6\\progra vl\\bibliotecaproyectofinal\\frontend\\bibliotecaweb\\pages\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8AFB9338-8777-4DEC-BC7B-775458EA6D98}|BibliotecaWeb\\BibliotecaWeb.csproj|solutionrelative:bibliotecaweb\\pages\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8AFB9338-8777-4DEC-BC7B-775458EA6D98}|BibliotecaWeb\\BibliotecaWeb.csproj|c:\\users\\paraj\\onedrive\\desktop\\utc\\programaci\u00F3n 6\\progra vl\\bibliotecaproyectofinal\\frontend\\bibliotecaweb\\wwwroot\\css\\biblioteca.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{8AFB9338-8777-4DEC-BC7B-775458EA6D98}|BibliotecaWeb\\BibliotecaWeb.csproj|solutionrelative:bibliotecaweb\\wwwroot\\css\\biblioteca.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 212,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\paraj\\OneDrive\\Desktop\\UTC\\Programaci\u00F3n 6\\PROGRA Vl\\BibliotecaProyectoFinal\\Frontend\\BibliotecaWeb\\Pages\\Usuarios\\Create.cshtml",
+              "RelativeDocumentMoniker": "BibliotecaWeb\\Pages\\Usuarios\\Create.cshtml",
+              "ToolTip": "C:\\Users\\paraj\\OneDrive\\Desktop\\UTC\\Programaci\u00F3n 6\\PROGRA Vl\\BibliotecaProyectoFinal\\Frontend\\BibliotecaWeb\\Pages\\Usuarios\\Create.cshtml",
+              "RelativeToolTip": "BibliotecaWeb\\Pages\\Usuarios\\Create.cshtml",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAswCUAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-29T06:43:53.241Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\paraj\\OneDrive\\Desktop\\UTC\\Programaci\u00F3n 6\\PROGRA Vl\\BibliotecaProyectoFinal\\Frontend\\BibliotecaWeb\\Pages\\Usuarios\\Index.cshtml",
+              "RelativeDocumentMoniker": "BibliotecaWeb\\Pages\\Usuarios\\Index.cshtml",
+              "ToolTip": "C:\\Users\\paraj\\OneDrive\\Desktop\\UTC\\Programaci\u00F3n 6\\PROGRA Vl\\BibliotecaProyectoFinal\\Frontend\\BibliotecaWeb\\Pages\\Usuarios\\Index.cshtml",
+              "RelativeToolTip": "BibliotecaWeb\\Pages\\Usuarios\\Index.cshtml",
+              "ViewState": "AgIAADgAAAAAAAAAAAAswFQAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-29T06:42:06.186Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\paraj\\OneDrive\\Desktop\\UTC\\Programaci\u00F3n 6\\PROGRA Vl\\BibliotecaProyectoFinal\\Frontend\\BibliotecaWeb\\Pages\\Prestamos\\Create.cshtml",
+              "RelativeDocumentMoniker": "BibliotecaWeb\\Pages\\Prestamos\\Create.cshtml",
+              "ToolTip": "C:\\Users\\paraj\\OneDrive\\Desktop\\UTC\\Programaci\u00F3n 6\\PROGRA Vl\\BibliotecaProyectoFinal\\Frontend\\BibliotecaWeb\\Pages\\Prestamos\\Create.cshtml",
+              "RelativeToolTip": "BibliotecaWeb\\Pages\\Prestamos\\Create.cshtml",
+              "ViewState": "AgIAAJ8AAAAAAAAAAAAwwMoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-29T06:37:48.109Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Estado.cshtml",
+              "DocumentMoniker": "C:\\Users\\paraj\\OneDrive\\Desktop\\UTC\\Programaci\u00F3n 6\\PROGRA Vl\\BibliotecaProyectoFinal\\Frontend\\BibliotecaWeb\\Pages\\Prestamos\\Estado.cshtml",
+              "RelativeDocumentMoniker": "BibliotecaWeb\\Pages\\Prestamos\\Estado.cshtml",
+              "ToolTip": "C:\\Users\\paraj\\OneDrive\\Desktop\\UTC\\Programaci\u00F3n 6\\PROGRA Vl\\BibliotecaProyectoFinal\\Frontend\\BibliotecaWeb\\Pages\\Prestamos\\Estado.cshtml",
+              "RelativeToolTip": "BibliotecaWeb\\Pages\\Prestamos\\Estado.cshtml",
+              "ViewState": "AgIAACwAAAAAAAAAAAAwwFEAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-29T06:36:53.783Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\paraj\\OneDrive\\Desktop\\UTC\\Programaci\u00F3n 6\\PROGRA Vl\\BibliotecaProyectoFinal\\Frontend\\BibliotecaWeb\\Pages\\Prestamos\\Index.cshtml",
+              "RelativeDocumentMoniker": "BibliotecaWeb\\Pages\\Prestamos\\Index.cshtml",
+              "ToolTip": "C:\\Users\\paraj\\OneDrive\\Desktop\\UTC\\Programaci\u00F3n 6\\PROGRA Vl\\BibliotecaProyectoFinal\\Frontend\\BibliotecaWeb\\Pages\\Prestamos\\Index.cshtml",
+              "RelativeToolTip": "BibliotecaWeb\\Pages\\Prestamos\\Index.cshtml",
+              "ViewState": "AgIAAHwAAAAAAAAAAAAwwKUAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-29T06:36:03.842Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\paraj\\OneDrive\\Desktop\\UTC\\Programaci\u00F3n 6\\PROGRA Vl\\BibliotecaProyectoFinal\\Frontend\\BibliotecaWeb\\Pages\\Generos\\Create.cshtml",
+              "RelativeDocumentMoniker": "BibliotecaWeb\\Pages\\Generos\\Create.cshtml",
+              "ToolTip": "C:\\Users\\paraj\\OneDrive\\Desktop\\UTC\\Programaci\u00F3n 6\\PROGRA Vl\\BibliotecaProyectoFinal\\Frontend\\BibliotecaWeb\\Pages\\Generos\\Create.cshtml",
+              "RelativeToolTip": "BibliotecaWeb\\Pages\\Generos\\Create.cshtml",
+              "ViewState": "AgIAAD0AAAAAAAAAAAAwwGIAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-29T06:35:21.326Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\paraj\\OneDrive\\Desktop\\UTC\\Programaci\u00F3n 6\\PROGRA Vl\\BibliotecaProyectoFinal\\Frontend\\BibliotecaWeb\\Pages\\Generos\\Index.cshtml",
+              "RelativeDocumentMoniker": "BibliotecaWeb\\Pages\\Generos\\Index.cshtml",
+              "ToolTip": "C:\\Users\\paraj\\OneDrive\\Desktop\\UTC\\Programaci\u00F3n 6\\PROGRA Vl\\BibliotecaProyectoFinal\\Frontend\\BibliotecaWeb\\Pages\\Generos\\Index.cshtml",
+              "RelativeToolTip": "BibliotecaWeb\\Pages\\Generos\\Index.cshtml",
+              "ViewState": "AgIAACIAAAAAAAAAAAAwwEsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-29T06:34:50.839Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\paraj\\OneDrive\\Desktop\\UTC\\Programaci\u00F3n 6\\PROGRA Vl\\BibliotecaProyectoFinal\\Frontend\\BibliotecaWeb\\Pages\\Autores\\Create.cshtml",
+              "RelativeDocumentMoniker": "BibliotecaWeb\\Pages\\Autores\\Create.cshtml",
+              "ToolTip": "C:\\Users\\paraj\\OneDrive\\Desktop\\UTC\\Programaci\u00F3n 6\\PROGRA Vl\\BibliotecaProyectoFinal\\Frontend\\BibliotecaWeb\\Pages\\Autores\\Create.cshtml",
+              "RelativeToolTip": "BibliotecaWeb\\Pages\\Autores\\Create.cshtml",
+              "ViewState": "AgIAAEkAAAAAAAAAAAAwwHQAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-29T06:34:12.003Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\paraj\\OneDrive\\Desktop\\UTC\\Programaci\u00F3n 6\\PROGRA Vl\\BibliotecaProyectoFinal\\Frontend\\BibliotecaWeb\\Pages\\Autores\\Index.cshtml",
+              "RelativeDocumentMoniker": "BibliotecaWeb\\Pages\\Autores\\Index.cshtml",
+              "ToolTip": "C:\\Users\\paraj\\OneDrive\\Desktop\\UTC\\Programaci\u00F3n 6\\PROGRA Vl\\BibliotecaProyectoFinal\\Frontend\\BibliotecaWeb\\Pages\\Autores\\Index.cshtml",
+              "RelativeToolTip": "BibliotecaWeb\\Pages\\Autores\\Index.cshtml",
+              "ViewState": "AgIAACYAAAAAAAAAAAAwwE8AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-29T06:33:36.527Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\paraj\\OneDrive\\Desktop\\UTC\\Programaci\u00F3n 6\\PROGRA Vl\\BibliotecaProyectoFinal\\Frontend\\BibliotecaWeb\\Pages\\Libros\\Create.cshtml",
+              "RelativeDocumentMoniker": "BibliotecaWeb\\Pages\\Libros\\Create.cshtml",
+              "ToolTip": "C:\\Users\\paraj\\OneDrive\\Desktop\\UTC\\Programaci\u00F3n 6\\PROGRA Vl\\BibliotecaProyectoFinal\\Frontend\\BibliotecaWeb\\Pages\\Libros\\Create.cshtml",
+              "RelativeToolTip": "BibliotecaWeb\\Pages\\Libros\\Create.cshtml",
+              "ViewState": "AgIAAE0AAAAAAAAAAAAIwHIAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-29T06:31:56.93Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\paraj\\OneDrive\\Desktop\\UTC\\Programaci\u00F3n 6\\PROGRA Vl\\BibliotecaProyectoFinal\\Frontend\\BibliotecaWeb\\Pages\\Libros\\Index.cshtml",
+              "RelativeDocumentMoniker": "BibliotecaWeb\\Pages\\Libros\\Index.cshtml",
+              "ToolTip": "C:\\Users\\paraj\\OneDrive\\Desktop\\UTC\\Programaci\u00F3n 6\\PROGRA Vl\\BibliotecaProyectoFinal\\Frontend\\BibliotecaWeb\\Pages\\Libros\\Index.cshtml",
+              "RelativeToolTip": "BibliotecaWeb\\Pages\\Libros\\Index.cshtml",
+              "ViewState": "AgIAADcAAAAAAAAAAADwv00AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-29T06:24:59.431Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\paraj\\OneDrive\\Desktop\\UTC\\Programaci\u00F3n 6\\PROGRA Vl\\BibliotecaProyectoFinal\\Frontend\\BibliotecaWeb\\Pages\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "BibliotecaWeb\\Pages\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\paraj\\OneDrive\\Desktop\\UTC\\Programaci\u00F3n 6\\PROGRA Vl\\BibliotecaProyectoFinal\\Frontend\\BibliotecaWeb\\Pages\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "BibliotecaWeb\\Pages\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAEsAAAAAAAAAAAAIwG4AAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-29T06:24:15.688Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "biblioteca.css",
+              "DocumentMoniker": "C:\\Users\\paraj\\OneDrive\\Desktop\\UTC\\Programaci\u00F3n 6\\PROGRA Vl\\BibliotecaProyectoFinal\\Frontend\\BibliotecaWeb\\wwwroot\\css\\biblioteca.css",
+              "RelativeDocumentMoniker": "BibliotecaWeb\\wwwroot\\css\\biblioteca.css",
+              "ToolTip": "C:\\Users\\paraj\\OneDrive\\Desktop\\UTC\\Programaci\u00F3n 6\\PROGRA Vl\\BibliotecaProyectoFinal\\Frontend\\BibliotecaWeb\\wwwroot\\css\\biblioteca.css",
+              "RelativeToolTip": "BibliotecaWeb\\wwwroot\\css\\biblioteca.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGUBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2026-03-29T06:23:10.586Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

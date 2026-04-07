@@ -1,0 +1,66 @@
+D:\Developer\Proyectos Universitarios\BibliotecaProyectoFinal\Frontend\BibliotecaWeb\bin\Debug\net8.0\appsettings.Development.json
+D:\Developer\Proyectos Universitarios\BibliotecaProyectoFinal\Frontend\BibliotecaWeb\bin\Debug\net8.0\appsettings.json
+D:\Developer\Proyectos Universitarios\BibliotecaProyectoFinal\Frontend\BibliotecaWeb\bin\Debug\net8.0\BibliotecaWeb.staticwebassets.runtime.json
+D:\Developer\Proyectos Universitarios\BibliotecaProyectoFinal\Frontend\BibliotecaWeb\bin\Debug\net8.0\BibliotecaWeb.staticwebassets.endpoints.json
+D:\Developer\Proyectos Universitarios\BibliotecaProyectoFinal\Frontend\BibliotecaWeb\bin\Debug\net8.0\BibliotecaWeb.exe
+D:\Developer\Proyectos Universitarios\BibliotecaProyectoFinal\Frontend\BibliotecaWeb\bin\Debug\net8.0\BibliotecaWeb.deps.json
+D:\Developer\Proyectos Universitarios\BibliotecaProyectoFinal\Frontend\BibliotecaWeb\bin\Debug\net8.0\BibliotecaWeb.runtimeconfig.json
+D:\Developer\Proyectos Universitarios\BibliotecaProyectoFinal\Frontend\BibliotecaWeb\bin\Debug\net8.0\BibliotecaWeb.dll
+D:\Developer\Proyectos Universitarios\BibliotecaProyectoFinal\Frontend\BibliotecaWeb\bin\Debug\net8.0\BibliotecaWeb.pdb
+D:\Developer\Proyectos Universitarios\BibliotecaProyectoFinal\Frontend\BibliotecaWeb\obj\Debug\net8.0\rpswa.dswa.cache.json
+D:\Developer\Proyectos Universitarios\BibliotecaProyectoFinal\Frontend\BibliotecaWeb\obj\Debug\net8.0\BibliotecaWeb.GeneratedMSBuildEditorConfig.editorconfig
+D:\Developer\Proyectos Universitarios\BibliotecaProyectoFinal\Frontend\BibliotecaWeb\obj\Debug\net8.0\BibliotecaWeb.AssemblyInfoInputs.cache
+D:\Developer\Proyectos Universitarios\BibliotecaProyectoFinal\Frontend\BibliotecaWeb\obj\Debug\net8.0\BibliotecaWeb.AssemblyInfo.cs
+D:\Developer\Proyectos Universitarios\BibliotecaProyectoFinal\Frontend\BibliotecaWeb\obj\Debug\net8.0\BibliotecaWeb.csproj.CoreCompileInputs.cache
+D:\Developer\Proyectos Universitarios\BibliotecaProyectoFinal\Frontend\BibliotecaWeb\obj\Debug\net8.0\BibliotecaWeb.MvcApplicationPartsAssemblyInfo.cache
+D:\Developer\Proyectos Universitarios\BibliotecaProyectoFinal\Frontend\BibliotecaWeb\obj\Debug\net8.0\BibliotecaWeb.RazorAssemblyInfo.cache
+D:\Developer\Proyectos Universitarios\BibliotecaProyectoFinal\Frontend\BibliotecaWeb\obj\Debug\net8.0\BibliotecaWeb.RazorAssemblyInfo.cs
+D:\Developer\Proyectos Universitarios\BibliotecaProyectoFinal\Frontend\BibliotecaWeb\obj\Debug\net8.0\rjimswa.dswa.cache.json
+D:\Developer\Proyectos Universitarios\BibliotecaProyectoFinal\Frontend\BibliotecaWeb\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
+D:\Developer\Proyectos Universitarios\BibliotecaProyectoFinal\Frontend\BibliotecaWeb\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
+D:\Developer\Proyectos Universitarios\BibliotecaProyectoFinal\Frontend\BibliotecaWeb\obj\Debug\net8.0\scopedcss\Pages\Shared\_Layout.cshtml.rz.scp.css
+D:\Developer\Proyectos Universitarios\BibliotecaProyectoFinal\Frontend\BibliotecaWeb\obj\Debug\net8.0\scopedcss\bundle\BibliotecaWeb.styles.css
+D:\Developer\Proyectos Universitarios\BibliotecaProyectoFinal\Frontend\BibliotecaWeb\obj\Debug\net8.0\scopedcss\projectbundle\BibliotecaWeb.bundle.scp.css
+D:\Developer\Proyectos Universitarios\BibliotecaProyectoFinal\Frontend\BibliotecaWeb\obj\Debug\net8.0\staticwebassets.build.json
+D:\Developer\Proyectos Universitarios\BibliotecaProyectoFinal\Frontend\BibliotecaWeb\obj\Debug\net8.0\staticwebassets.build.json.cache
+D:\Developer\Proyectos Universitarios\BibliotecaProyectoFinal\Frontend\BibliotecaWeb\obj\Debug\net8.0\staticwebassets.development.json
+D:\Developer\Proyectos Universitarios\BibliotecaProyectoFinal\Frontend\BibliotecaWeb\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+D:\Developer\Proyectos Universitarios\BibliotecaProyectoFinal\Frontend\BibliotecaWeb\obj\Debug\net8.0\BibliotecaWeb.dll
+D:\Developer\Proyectos Universitarios\BibliotecaProyectoFinal\Frontend\BibliotecaWeb\obj\Debug\net8.0\refint\BibliotecaWeb.dll
+D:\Developer\Proyectos Universitarios\BibliotecaProyectoFinal\Frontend\BibliotecaWeb\obj\Debug\net8.0\BibliotecaWeb.pdb
+D:\Developer\Proyectos Universitarios\BibliotecaProyectoFinal\Frontend\BibliotecaWeb\obj\Debug\net8.0\BibliotecaWeb.genruntimeconfig.cache
+D:\Developer\Proyectos Universitarios\BibliotecaProyectoFinal\Frontend\BibliotecaWeb\obj\Debug\net8.0\ref\BibliotecaWeb.dll
+D:\Developer\Proyectos Universitarios\BibliotecaProyectoFinal\Frontend\BibliotecaWeb\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+C:\Users\paraj\OneDrive\Desktop\UTC\Programación 6\PROGRA Vl\BibliotecaProyectoFinal\Frontend\BibliotecaWeb\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\paraj\OneDrive\Desktop\UTC\Programación 6\PROGRA Vl\BibliotecaProyectoFinal\Frontend\BibliotecaWeb\bin\Debug\net8.0\appsettings.json
+C:\Users\paraj\OneDrive\Desktop\UTC\Programación 6\PROGRA Vl\BibliotecaProyectoFinal\Frontend\BibliotecaWeb\bin\Debug\net8.0\BibliotecaWeb.staticwebassets.runtime.json
+C:\Users\paraj\OneDrive\Desktop\UTC\Programación 6\PROGRA Vl\BibliotecaProyectoFinal\Frontend\BibliotecaWeb\bin\Debug\net8.0\BibliotecaWeb.staticwebassets.endpoints.json
+C:\Users\paraj\OneDrive\Desktop\UTC\Programación 6\PROGRA Vl\BibliotecaProyectoFinal\Frontend\BibliotecaWeb\bin\Debug\net8.0\BibliotecaWeb.exe
+C:\Users\paraj\OneDrive\Desktop\UTC\Programación 6\PROGRA Vl\BibliotecaProyectoFinal\Frontend\BibliotecaWeb\bin\Debug\net8.0\BibliotecaWeb.deps.json
+C:\Users\paraj\OneDrive\Desktop\UTC\Programación 6\PROGRA Vl\BibliotecaProyectoFinal\Frontend\BibliotecaWeb\bin\Debug\net8.0\BibliotecaWeb.runtimeconfig.json
+C:\Users\paraj\OneDrive\Desktop\UTC\Programación 6\PROGRA Vl\BibliotecaProyectoFinal\Frontend\BibliotecaWeb\bin\Debug\net8.0\BibliotecaWeb.dll
+C:\Users\paraj\OneDrive\Desktop\UTC\Programación 6\PROGRA Vl\BibliotecaProyectoFinal\Frontend\BibliotecaWeb\bin\Debug\net8.0\BibliotecaWeb.pdb
+C:\Users\paraj\OneDrive\Desktop\UTC\Programación 6\PROGRA Vl\BibliotecaProyectoFinal\Frontend\BibliotecaWeb\obj\Debug\net8.0\rpswa.dswa.cache.json
+C:\Users\paraj\OneDrive\Desktop\UTC\Programación 6\PROGRA Vl\BibliotecaProyectoFinal\Frontend\BibliotecaWeb\obj\Debug\net8.0\BibliotecaWeb.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\paraj\OneDrive\Desktop\UTC\Programación 6\PROGRA Vl\BibliotecaProyectoFinal\Frontend\BibliotecaWeb\obj\Debug\net8.0\BibliotecaWeb.AssemblyInfoInputs.cache
+C:\Users\paraj\OneDrive\Desktop\UTC\Programación 6\PROGRA Vl\BibliotecaProyectoFinal\Frontend\BibliotecaWeb\obj\Debug\net8.0\BibliotecaWeb.AssemblyInfo.cs
+C:\Users\paraj\OneDrive\Desktop\UTC\Programación 6\PROGRA Vl\BibliotecaProyectoFinal\Frontend\BibliotecaWeb\obj\Debug\net8.0\BibliotecaWeb.csproj.CoreCompileInputs.cache
+C:\Users\paraj\OneDrive\Desktop\UTC\Programación 6\PROGRA Vl\BibliotecaProyectoFinal\Frontend\BibliotecaWeb\obj\Debug\net8.0\BibliotecaWeb.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\paraj\OneDrive\Desktop\UTC\Programación 6\PROGRA Vl\BibliotecaProyectoFinal\Frontend\BibliotecaWeb\obj\Debug\net8.0\BibliotecaWeb.RazorAssemblyInfo.cache
+C:\Users\paraj\OneDrive\Desktop\UTC\Programación 6\PROGRA Vl\BibliotecaProyectoFinal\Frontend\BibliotecaWeb\obj\Debug\net8.0\BibliotecaWeb.RazorAssemblyInfo.cs
+C:\Users\paraj\OneDrive\Desktop\UTC\Programación 6\PROGRA Vl\BibliotecaProyectoFinal\Frontend\BibliotecaWeb\obj\Debug\net8.0\rjimswa.dswa.cache.json
+C:\Users\paraj\OneDrive\Desktop\UTC\Programación 6\PROGRA Vl\BibliotecaProyectoFinal\Frontend\BibliotecaWeb\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
+C:\Users\paraj\OneDrive\Desktop\UTC\Programación 6\PROGRA Vl\BibliotecaProyectoFinal\Frontend\BibliotecaWeb\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
+C:\Users\paraj\OneDrive\Desktop\UTC\Programación 6\PROGRA Vl\BibliotecaProyectoFinal\Frontend\BibliotecaWeb\obj\Debug\net8.0\scopedcss\Pages\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\paraj\OneDrive\Desktop\UTC\Programación 6\PROGRA Vl\BibliotecaProyectoFinal\Frontend\BibliotecaWeb\obj\Debug\net8.0\scopedcss\bundle\BibliotecaWeb.styles.css
+C:\Users\paraj\OneDrive\Desktop\UTC\Programación 6\PROGRA Vl\BibliotecaProyectoFinal\Frontend\BibliotecaWeb\obj\Debug\net8.0\scopedcss\projectbundle\BibliotecaWeb.bundle.scp.css
+C:\Users\paraj\OneDrive\Desktop\UTC\Programación 6\PROGRA Vl\BibliotecaProyectoFinal\Frontend\BibliotecaWeb\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\paraj\OneDrive\Desktop\UTC\Programación 6\PROGRA Vl\BibliotecaProyectoFinal\Frontend\BibliotecaWeb\obj\Debug\net8.0\staticwebassets.build.json.cache
+C:\Users\paraj\OneDrive\Desktop\UTC\Programación 6\PROGRA Vl\BibliotecaProyectoFinal\Frontend\BibliotecaWeb\obj\Debug\net8.0\staticwebassets.development.json
+C:\Users\paraj\OneDrive\Desktop\UTC\Programación 6\PROGRA Vl\BibliotecaProyectoFinal\Frontend\BibliotecaWeb\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+C:\Users\paraj\OneDrive\Desktop\UTC\Programación 6\PROGRA Vl\BibliotecaProyectoFinal\Frontend\BibliotecaWeb\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+C:\Users\paraj\OneDrive\Desktop\UTC\Programación 6\PROGRA Vl\BibliotecaProyectoFinal\Frontend\BibliotecaWeb\obj\Debug\net8.0\BibliotecaWeb.dll
+C:\Users\paraj\OneDrive\Desktop\UTC\Programación 6\PROGRA Vl\BibliotecaProyectoFinal\Frontend\BibliotecaWeb\obj\Debug\net8.0\refint\BibliotecaWeb.dll
+C:\Users\paraj\OneDrive\Desktop\UTC\Programación 6\PROGRA Vl\BibliotecaProyectoFinal\Frontend\BibliotecaWeb\obj\Debug\net8.0\BibliotecaWeb.pdb
+C:\Users\paraj\OneDrive\Desktop\UTC\Programación 6\PROGRA Vl\BibliotecaProyectoFinal\Frontend\BibliotecaWeb\obj\Debug\net8.0\BibliotecaWeb.genruntimeconfig.cache
+C:\Users\paraj\OneDrive\Desktop\UTC\Programación 6\PROGRA Vl\BibliotecaProyectoFinal\Frontend\BibliotecaWeb\obj\Debug\net8.0\ref\BibliotecaWeb.dll

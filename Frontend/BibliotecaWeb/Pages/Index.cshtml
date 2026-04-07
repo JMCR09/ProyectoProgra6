@@ -1,0 +1,58 @@
+@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Inicio";
+}
+
+<div class="text-center">
+    <h1 class="display-5">Sistema de Gestion de Biblioteca</h1>
+    <p class="lead">Frontend en Razor Pages conectado al backend Web API.</p>
+</div>
+
+<div class="row mt-4">
+    <div class="col-md-6 col-lg-4 mb-3">
+        <div class="card h-100">
+            <div class="card-body">
+                <h5 class="card-title">Autores</h5>
+                <p class="card-text">Administra el catalogo de autores.</p>
+                <a asp-page="/Autores/Index" class="btn btn-primary">Ir a autores</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 col-lg-4 mb-3">
+        <div class="card h-100">
+            <div class="card-body">
+                <h5 class="card-title">Generos</h5>
+                <p class="card-text">Administra los generos literarios.</p>
+                <a asp-page="/Generos/Index" class="btn btn-primary">Ir a generos</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 col-lg-4 mb-3">
+        <div class="card h-100">
+            <div class="card-body">
+                <h5 class="card-title">Libros</h5>
+                <p class="card-text">Relaciona libros con autor y genero.</p>
+                <a asp-page="/Libros/Index" class="btn btn-primary">Ir a libros</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 col-lg-4 mb-3">
+        <div class="card h-100">
+            <div class="card-body">
+                <h5 class="card-title">Usuarios</h5>
+                <p class="card-text">Gestiona a los lectores de la biblioteca.</p>
+                <a asp-page="/Usuarios/Index" class="btn btn-primary">Ir a usuarios</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 col-lg-4 mb-3">
+        <div class="card h-100">
+            <div class="card-body">
+                <h5 class="card-title">Prestamos</h5>
+                <p class="card-text">Administra prestamos y devoluciones.</p>
+                <a asp-page="/Prestamos/Index" class="btn btn-primary">Ir a prestamos</a>
+            </div>
+        </div>
+    </div>
+</div>

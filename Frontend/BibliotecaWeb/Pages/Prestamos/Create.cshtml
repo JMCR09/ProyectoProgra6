@@ -1,0 +1,203 @@
+@page "{id:int?}"
+@model BibliotecaWeb.Pages.Prestamos.CreateModel
+@{
+    ViewData["Title"] = Model.Prestamo.IdPrestamo == 0 ? "Crear Préstamo" : "Editar Préstamo";
+    var esCreacion = Model.Prestamo.IdPrestamo == 0;
+}
+
+<div class="mb-4">
+    <h1>
+        @if (esCreacion)
+        {
+            <i class="fas fa-hand-holding-heart"></i>
+            <span>Crear Nuevo Préstamo</span>
+        }
+        else
+        {
+            <i class="fas fa-edit"></i>
+            <span>Editar Préstamo</span>
+        }
+    </h1>
+    <p class="text-muted">
+        @if (esCreacion)
+        {
+            <span>Registre un nuevo préstamo de libro para un usuario.</span>
+        }
+        else
+        {
+            <span>Modifique los datos del préstamo seleccionado.</span>
+        }
+    </p>
+</div>
+
+<div class="row">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-header">
+                <i class="fas fa-info-circle"></i> Datos del Préstamo
+            </div>
+            <div class="card-body">
+                <form method="post">
+                    <input type="hidden" asp-for="Prestamo.IdPrestamo" />
+
+                    <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
+
+                    <div class="mb-3">
+                        <label asp-for="Prestamo.IdUsuario" class="form-label">
+                            <i class="fas fa-user"></i> Usuario
+                        </label>
+                        <select asp-for="Prestamo.IdUsuario" class="form-select">
+                            <option value="">-- Seleccione un usuario --</option>
+                            @foreach (var usuario in Model.Usuarios)
+                            {
+                                <option value="@usuario.IdUsuario">@usuario.Nombre @usuario.Apellidos</option>
+                            }
+                        </select>
+                        <span asp-validation-for="Prestamo.IdUsuario" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="Prestamo.IdLibro" class="form-label">
+                            <i class="fas fa-book"></i> Libro
+                        </label>
+                        <select asp-for="Prestamo.IdLibro" class="form-select">
+                            <option value="">-- Seleccione un libro --</option>
+                            @foreach (var libro in Model.Libros)
+                            {
+                                <option value="@libro.IdLibro">@libro.Titulo</option>
+                            }
+                        </select>
+                        <span asp-validation-for="Prestamo.IdLibro" class="text-danger"></span>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label asp-for="Prestamo.FechaPrestamo" class="form-label">
+                                <i class="fas fa-calendar-plus"></i> Fecha de Préstamo
+                            </label>
+                            <input asp-for="Prestamo.FechaPrestamo" type="date" class="form-control" id="fechaPrestamo" />
+                            <span asp-validation-for="Prestamo.FechaPrestamo" class="text-danger"></span>
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+                            <label asp-for="Prestamo.FechaDevolucion" class="form-label">
+                                <i class="fas fa-calendar-check"></i> Fecha de Devolución
+                            </label>
+                            <input asp-for="Prestamo.FechaDevolucion"
+                                   type="date"
+                                   class="form-control"
+                                   id="fechaDevolucion"
+                                   min="@Model.MinFechaDevolucion"
+                                   max="@Model.MaxFechaDevolucion" />
+                            <span asp-validation-for="Prestamo.FechaDevolucion" class="text-danger"></span>
+                            <div class="form-text text-muted">
+                                <i class="fas fa-info-circle"></i>
+                                Solo se permiten fechas dentro de los 30 días posteriores a la fecha de préstamo.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label asp-for="Prestamo.Estado" class="form-label">
+                                <i class="fas fa-tag"></i> Estado
+                            </label>
+                            <select asp-for="Prestamo.Estado" class="form-select">
+                                <option value="Pendiente">Pendiente</option>
+                                <option value="Devuelto">Devuelto</option>
+                                <option value="Cancelado">Cancelado</option>
+                            </select>
+                            <span asp-validation-for="Prestamo.Estado" class="text-danger"></span>
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+                            <label asp-for="Prestamo.FechaDevolucionEfectiva" class="form-label">
+                                <i class="fas fa-calendar-day"></i> Fecha Devolución Efectiva
+                            </label>
+                            <input asp-for="Prestamo.FechaDevolucionEfectiva" type="date" class="form-control" />
+                            <span asp-validation-for="Prestamo.FechaDevolucionEfectiva" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="Prestamo.Comentarios" class="form-label">
+                            <i class="fas fa-comment"></i> Comentarios
+                        </label>
+                        <textarea asp-for="Prestamo.Comentarios" class="form-control" rows="3"
+                                  placeholder="Observaciones adicionales (opcional)..."></textarea>
+                        <span asp-validation-for="Prestamo.Comentarios" class="text-danger"></span>
+                    </div>
+
+                    <div class="d-flex gap-2 mt-4">
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-save"></i> @(esCreacion ? "Guardar Préstamo" : "Actualizar")
+                        </button>
+                        <a asp-page="/Prestamos/Index" class="btn btn-outline-secondary">
+                            <i class="fas fa-arrow-left"></i> Cancelar
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-header">
+                <i class="fas fa-lightbulb"></i> Información Importante
+            </div>
+            <div class="card-body">
+                <p><i class="fas fa-clock text-warning"></i> <strong>Duración máxima:</strong> 30 días</p>
+                <p><i class="fas fa-calendar-alt text-granate"></i> La fecha de devolución se calcula automáticamente.</p>
+                <p><i class="fas fa-exclamation-triangle text-danger"></i> Préstamos vencidos pueden generar multas.</p>
+                <hr>
+                <p><i class="fas fa-check-circle text-success"></i> <strong>Estados:</strong></p>
+                <ul class="small">
+                    <li><span class="badge bg-warning">Pendiente</span> - Préstamo activo</li>
+                    <li><span class="badge bg-success">Devuelto</span> - Libro devuelto</li>
+                    <li><span class="badge bg-danger">Cancelado</span> - Préstamo cancelado</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+
+    <script>
+        const fechaPrestamo = document.getElementById("fechaPrestamo");
+        const fechaDevolucion = document.getElementById("fechaDevolucion");
+
+        function formatearFecha(fecha) {
+            const year = fecha.getFullYear();
+            const month = String(fecha.getMonth() + 1).padStart(2, "0");
+            const day = String(fecha.getDate()).padStart(2, "0");
+            return `${year}-${month}-${day}`;
+        }
+
+        function actualizarRangoDevolucion() {
+            if (!fechaPrestamo.value) {
+                fechaDevolucion.min = "";
+                fechaDevolucion.max = "";
+                return;
+            }
+
+            const base = new Date(`${fechaPrestamo.value}T00:00:00`);
+            const max = new Date(base);
+            max.setDate(max.getDate() + 30);
+
+            fechaDevolucion.min = formatearFecha(base);
+            fechaDevolucion.max = formatearFecha(max);
+
+            if (fechaDevolucion.value && (fechaDevolucion.value < fechaDevolucion.min || fechaDevolucion.value > fechaDevolucion.max)) {
+                fechaDevolucion.value = "";
+            }
+        }
+
+        fechaPrestamo.addEventListener("change", actualizarRangoDevolucion);
+        actualizarRangoDevolucion();
+    </script>
+}

@@ -1,0 +1,78 @@
+@page
+@model BibliotecaWeb.Pages.Libros.IndexModel
+@{
+    ViewData["Title"] = "Catálogo de Libros";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h1>
+        <i class="fas fa-book"></i> Catálogo de Libros
+    </h1>
+    <a asp-page="Create" class="btn btn-primary">
+        <i class="fas fa-plus-circle"></i> Nuevo Libro
+    </a>
+</div>
+
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success">
+        <i class="fas fa-check-circle"></i> @TempData["SuccessMessage"]
+    </div>
+}
+@if (TempData["ErrorMessage"] != null)
+{
+    <div class="alert alert-danger">
+        <i class="fas fa-exclamation-triangle"></i> @TempData["ErrorMessage"]
+    </div>
+}
+
+<div class="card">
+    <div class="card-header">
+        <i class="fas fa-list"></i> Lista de Libros Disponibles
+    </div>
+    <div class="card-body p-0">
+        <table class="table table-hover mb-0">
+            <thead>
+                <tr>
+                    <th><i class="fas fa-heading"></i> Título</th>
+                    <th><i class="fas fa-user"></i> Autor</th>
+                    <th><i class="fas fa-tag"></i> Género</th>
+                    <th><i class="fas fa-file-alt"></i> Páginas</th>
+                    <th><i class="fas fa-calendar-alt"></i> Publicación</th>
+                    <th><i class="fas fa-cog"></i> Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var libro in Model.Libros)
+                {
+                    <tr>
+                        <td class="fw-bold">@libro.Titulo</td>
+                        <td>@(libro.Autor?.Nombre ?? "N/A") @(libro.Autor?.Apellidos ?? "")</td>
+                        <td><span class="badge bg-secondary">@(libro.Genero?.Nombre ?? "N/A")</span></td>
+                        <td>@libro.NumeroPaginas</td>
+                        <td>@(libro.FechaPublicacion?.ToShortDateString() ?? "N/A")</td>
+                        <td>
+                            <a asp-page="Edit" asp-route-id="@libro.IdLibro" class="btn btn-warning btn-sm" title="Editar">
+                                <i class="fas fa-edit"></i>
+                            </a>
+                            <a asp-page="Delete" asp-route-id="@libro.IdLibro" class="btn btn-danger btn-sm" title="Eliminar">
+                                <i class="fas fa-trash-alt"></i>
+                            </a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+@if (!Model.Libros.Any())
+{
+    <div class="text-center py-5">
+        <i class="fas fa-book-open fa-3x text-muted mb-3"></i>
+        <p class="text-muted">No hay libros registrados en el catálogo.</p>
+        <a asp-page="Create" class="btn btn-primary">
+            <i class="fas fa-plus-circle"></i> Agregar el primer libro
+        </a>
+    </div>
+}

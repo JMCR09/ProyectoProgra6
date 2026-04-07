@@ -1,0 +1,117 @@
+@page "{id:int?}"
+@model BibliotecaWeb.Pages.Autores.CreateModel
+@{
+    ViewData["Title"] = Model.Autor.IdAutor == 0 ? "Registrar Nuevo Autor" : "Editar Autor";
+    var esCreacion = Model.Autor.IdAutor == 0;
+}
+
+<div class="mb-4">
+    <h1>
+        @if (esCreacion)
+        {
+            <i class="fas fa-user-plus"></i>
+            <span>Registrar Nuevo Autor</span>
+        }
+        else
+        {
+            <i class="fas fa-user-edit"></i>
+            <span>Editar Autor</span>
+        }
+    </h1>
+    <p class="text-muted">
+        @if (esCreacion)
+        {
+            <span>Complete los datos del autor para agregarlo al sistema.</span>
+        }
+        else
+        {
+            <span>Modifique los datos del autor seleccionado.</span>
+        }
+    </p>
+</div>
+
+<div class="row">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-header">
+                <i class="fas fa-info-circle"></i> Datos del Autor
+            </div>
+            <div class="card-body">
+                <form method="post">
+                    <input type="hidden" asp-for="Autor.IdAutor" />
+
+                    <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
+
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label asp-for="Autor.Nombre" class="form-label">
+                                <i class="fas fa-user"></i> Nombre
+                            </label>
+                            <input asp-for="Autor.Nombre" class="form-control" placeholder="Ingrese el nombre" />
+                            <span asp-validation-for="Autor.Nombre" class="text-danger"></span>
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+                            <label asp-for="Autor.Apellidos" class="form-label">
+                                <i class="fas fa-user-friends"></i> Apellidos
+                            </label>
+                            <input asp-for="Autor.Apellidos" class="form-control" placeholder="Ingrese los apellidos" />
+                            <span asp-validation-for="Autor.Apellidos" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label asp-for="Autor.FechaNacimiento" class="form-label">
+                                <i class="fas fa-calendar-alt"></i> Fecha de Nacimiento
+                            </label>
+                            <input asp-for="Autor.FechaNacimiento" type="date" class="form-control" />
+                            <span asp-validation-for="Autor.FechaNacimiento" class="text-danger"></span>
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+                            <label asp-for="Autor.Nacionalidad" class="form-label">
+                                <i class="fas fa-globe-americas"></i> Nacionalidad
+                            </label>
+                            <input asp-for="Autor.Nacionalidad" class="form-control" placeholder="Ej: Costarricense, Mexicano, etc." />
+                            <span asp-validation-for="Autor.Nacionalidad" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="d-flex gap-2 mt-3">
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-save"></i>
+                            @(esCreacion ? "Guardar Autor" : "Actualizar")
+                        </button>
+                        <a asp-page="/Autores/Index" class="btn btn-outline-secondary">
+                            <i class="fas fa-arrow-left"></i> Cancelar
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-header">
+                <i class="fas fa-lightbulb"></i> Consejos
+            </div>
+            <div class="card-body">
+                <p><i class="fas fa-check-circle text-granate"></i> Complete todos los campos obligatorios.</p>
+                <p><i class="fas fa-check-circle text-granate"></i> La fecha de nacimiento debe ser válida.</p>
+                <p><i class="fas fa-check-circle text-granate"></i> La nacionalidad debe ser un país válido.</p>
+                <hr>
+                <small class="text-muted">
+                    <i class="fas fa-info-circle"></i> Los campos marcados con * son obligatorios.
+                </small>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

@@ -1,0 +1,99 @@
+@page "{id:int?}"
+@model BibliotecaWeb.Pages.Generos.CreateModel
+@{
+    ViewData["Title"] = Model.Genero.IdGenero == 0 ? "Registrar Nuevo Género" : "Editar Género";
+    var esCreacion = Model.Genero.IdGenero == 0;
+}
+
+<div class="mb-4">
+    <h1>
+        @if (esCreacion)
+        {
+            <i class="fas fa-tag"></i>
+            <span>Registrar Nuevo Género Literario</span>
+        }
+        else
+        {
+            <i class="fas fa-edit"></i>
+            <span>Editar Género Literario</span>
+        }
+    </h1>
+    <p class="text-muted">
+        @if (esCreacion)
+        {
+            <span>Complete los datos del género literario para agregarlo al catálogo.</span>
+        }
+        else
+        {
+            <span>Modifique el nombre del género literario seleccionado.</span>
+        }
+    </p>
+</div>
+
+<div class="row">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-header">
+                <i class="fas fa-info-circle"></i> Datos del Género
+            </div>
+            <div class="card-body">
+                <form method="post">
+                    <input type="hidden" asp-for="Genero.IdGenero" />
+
+                    <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
+
+                    <div class="mb-3">
+                        <label asp-for="Genero.Nombre" class="form-label">
+                            <i class="fas fa-bookmark"></i> Nombre del Género
+                        </label>
+                        <input asp-for="Genero.Nombre" class="form-control" placeholder="Ej: Novela, Poesía, Ciencia Ficción, Historia..." />
+                        <span asp-validation-for="Genero.Nombre" class="text-danger"></span>
+                        <small class="form-text text-muted">
+                            <i class="fas fa-info-circle"></i> Ingrese un nombre descriptivo para el género literario.
+                        </small>
+                    </div>
+
+                    <div class="d-flex gap-2 mt-4">
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-save"></i>
+                            @(esCreacion ? "Guardar Género" : "Actualizar")
+                        </button>
+                        <a asp-page="/Generos/Index" class="btn btn-outline-secondary">
+                            <i class="fas fa-arrow-left"></i> Cancelar
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-header">
+                <i class="fas fa-lightbulb"></i> Ejemplos de Géneros
+            </div>
+            <div class="card-body">
+                <ul class="list-unstyled">
+                    <li class="mb-2"><i class="fas fa-book text-granate"></i> Novela</li>
+                    <li class="mb-2"><i class="fas fa-feather-alt text-granate"></i> Poesía</li>
+                    <li class="mb-2"><i class="fas fa-rocket text-granate"></i> Ciencia Ficción</li>
+                    <li class="mb-2"><i class="fas fa-dragon text-granate"></i> Fantasía</li>
+                    <li class="mb-2"><i class="fas fa-history text-granate"></i> Historia</li>
+                    <li class="mb-2"><i class="fas fa-heart text-granate"></i> Romance</li>
+                    <li class="mb-2"><i class="fas fa-skull text-granate"></i> Terror</li>
+                    <li class="mb-2"><i class="fas fa-search text-granate"></i> Misterio</li>
+                </ul>
+                <hr>
+                <small class="text-muted">
+                    <i class="fas fa-info-circle"></i> Los géneros ayudan a clasificar los libros en el catálogo.
+                </small>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
