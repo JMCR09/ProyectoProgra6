@@ -1,40 +1,80 @@
 @page
 @model BibliotecaWeb.Pages.Autores.IndexModel
 @{
-    ViewData["Title"] = "Autores";
+    ViewData["Title"] = "Gestión de Autores";
 }
 
-<div class="d-flex justify-content-between align-items-center mb-3">
-    <h2>Autores</h2>
-    <a asp-page="/Autores/Create" class="btn btn-success">Nuevo autor</a>
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h1>
+        <i class="fas fa-user-edit"></i> Gestión de Autores
+    </h1>
+    <a asp-page="/Autores/Create" class="btn btn-primary">
+        <i class="fas fa-plus-circle"></i> Nuevo Autor
+    </a>
 </div>
 
-<table class="table table-bordered table-striped">
-    <thead>
-        <tr>
-            <th>Nombre</th>
-            <th>Apellidos</th>
-            <th>Fecha Nacimiento</th>
-            <th>Nacionalidad</th>
-            <th></th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var autor in Model.Autores)
-        {
-            <tr>
-                <td>@autor.Nombre</td>
-                <td>@autor.Apellidos</td>
-                <td>@autor.FechaNacimiento?.ToString("yyyy-MM-dd")</td>
-                <td>@autor.Nacionalidad</td>
-                <td><a asp-page="/Autores/Create" asp-route-id="@autor.IdAutor" class="btn btn-warning btn-sm">Editar</a></td>
-                <td>
-                    <form method="post" asp-page-handler="Delete" asp-route-id="@autor.IdAutor">
-                        <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
-                    </form>
-                </td>
-            </tr>
-        }
-    </tbody>
-</table>
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success">
+        <i class="fas fa-check-circle"></i> @TempData["SuccessMessage"]
+    </div>
+}
+@if (TempData["ErrorMessage"] != null)
+{
+    <div class="alert alert-danger">
+        <i class="fas fa-exclamation-triangle"></i> @TempData["ErrorMessage"]
+    </div>
+}
+
+<div class="card">
+    <div class="card-header">
+        <i class="fas fa-list"></i> Lista de Autores Registrados
+    </div>
+    <div class="card-body p-0">
+        <table class="table table-hover mb-0">
+            <thead>
+                <tr>
+                    <th><i class="fas fa-user"></i> Nombre</th>
+                    <th><i class="fas fa-user-friends"></i> Apellidos</th>
+                    <th><i class="fas fa-calendar-alt"></i> Fecha Nacimiento</th>
+                    <th><i class="fas fa-globe-americas"></i> Nacionalidad</th>
+                    <th colspan="2" style="width: 150px;"><i class="fas fa-cog"></i> Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var autor in Model.Autores)
+                {
+                    <tr>
+                        <td class="fw-bold">@autor.Nombre</td>
+                        <td>@autor.Apellidos</td>
+                        <td>@autor.FechaNacimiento?.ToString("dd/MM/yyyy")</td>
+                        <td><span class="badge bg-secondary">@autor.Nacionalidad</span></td>
+                        <td>
+                            <a asp-page="/Autores/Edit" asp-route-id="@autor.IdAutor" class="btn btn-warning btn-sm" title="Editar">
+                                <i class="fas fa-edit"></i>
+                            </a>
+                        </td>
+                        <td>
+                            <form method="post" asp-page-handler="Delete" asp-route-id="@autor.IdAutor" onsubmit="return confirm('¿Está seguro de eliminar este autor?');">
+                                <button type="submit" class="btn btn-danger btn-sm" title="Eliminar">
+                                    <i class="fas fa-trash-alt"></i>
+                                </button>
+                            </form>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+@if (!Model.Autores.Any())
+{
+    <div class="text-center py-5">
+        <i class="fas fa-user-edit fa-3x text-muted mb-3"></i>
+        <p class="text-muted">No hay autores registrados en el sistema.</p>
+        <a asp-page="/Autores/Create" class="btn btn-primary">
+            <i class="fas fa-plus-circle"></i> Agregar el primer autor
+        </a>
+    </div>
+}

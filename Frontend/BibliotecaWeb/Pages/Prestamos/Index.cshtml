@@ -1,67 +1,166 @@
 @page
 @model BibliotecaWeb.Pages.Prestamos.IndexModel
 @{
-    ViewData["Title"] = "Prestamos";
+    ViewData["Title"] = "Gestión de Préstamos";
 }
 
-<div class="d-flex justify-content-between align-items-center mb-3">
-    <h2>Prestamos</h2>
-    <a asp-page="/Prestamos/Create" class="btn btn-success">Nuevo prestamo</a>
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h1>
+        <i class="fas fa-hand-holding-heart"></i> Gestión de Préstamos
+    </h1>
+    <a asp-page="/Prestamos/Create" class="btn btn-primary">
+        <i class="fas fa-plus-circle"></i> Nuevo Préstamo
+    </a>
 </div>
 
-<form method="get" class="row g-3 mb-4">
-    <div class="col-md-4">
-        <label asp-for="FiltroLibro" class="form-label">Filtrar por libro</label>
-        <input asp-for="FiltroLibro" class="form-control" placeholder="Nombre del libro" />
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success">
+        <i class="fas fa-check-circle"></i> @TempData["SuccessMessage"]
     </div>
-    <div class="col-md-4">
-        <label asp-for="FiltroUsuario" class="form-label">Filtrar por usuario</label>
-        <input asp-for="FiltroUsuario" class="form-control" placeholder="Nombre del usuario" />
+}
+@if (TempData["ErrorMessage"] != null)
+{
+    <div class="alert alert-danger">
+        <i class="fas fa-exclamation-triangle"></i> @TempData["ErrorMessage"]
     </div>
-    <div class="col-md-3">
-        <label asp-for="FiltroFecha" class="form-label">Filtrar por fecha</label>
-        <input asp-for="FiltroFecha" type="date" class="form-control" />
-    </div>
-    <div class="col-md-1 d-flex align-items-end">
-        <button type="submit" class="btn btn-primary w-100">Buscar</button>
-    </div>
-    <div class="col-12">
-        <a asp-page="/Prestamos/Index" class="btn btn-secondary">Limpiar filtros</a>
-    </div>
-</form>
+}
 
-<table class="table table-bordered table-striped">
-    <thead>
-        <tr>
-            <th>Usuario</th>
-            <th>Libro</th>
-            <th>Fecha Prestamo</th>
-            <th>Fecha Devolucion</th>
-            <th>Estado</th>
-            <th>Comentarios</th>
-            <th></th>
-            <th></th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var prestamo in Model.Prestamos)
-        {
-            <tr>
-                <td>@($"{prestamo.Usuario?.Nombre} {prestamo.Usuario?.Apellidos}")</td>
-                <td>@prestamo.Libro?.Titulo</td>
-                <td>@prestamo.FechaPrestamo?.ToString("yyyy-MM-dd")</td>
-                <td>@prestamo.FechaDevolucion?.ToString("yyyy-MM-dd")</td>
-                <td>@prestamo.Estado</td>
-                <td>@prestamo.Comentarios</td>
-                <td><a asp-page="/Prestamos/Create" asp-route-id="@prestamo.IdPrestamo" class="btn btn-warning btn-sm">Editar</a></td>
-                <td><a asp-page="/Prestamos/Estado" asp-route-id="@prestamo.IdPrestamo" class="btn btn-info btn-sm">Cambiar estado</a></td>
-                <td>
-                    <form method="post" asp-page-handler="Delete" asp-route-id="@prestamo.IdPrestamo">
-                        <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
-                    </form>
-                </td>
-            </tr>
-        }
-    </tbody>
-</table>
+<!-- Filtros de búsqueda -->
+<div class="card mb-4">
+    <div class="card-header">
+        <i class="fas fa-search"></i> Buscar Préstamos
+    </div>
+    <div class="card-body">
+        <form method="get">
+            <div class="row g-3">
+                <div class="col-md-4">
+                    <label asp-for="FiltroLibro" class="form-label">
+                        <i class="fas fa-book"></i> Filtrar por libro
+                    </label>
+                    <input asp-for="FiltroLibro" class="form-control" placeholder="Nombre del libro" />
+                </div>
+                <div class="col-md-4">
+                    <label asp-for="FiltroUsuario" class="form-label">
+                        <i class="fas fa-user"></i> Filtrar por usuario
+                    </label>
+                    <input asp-for="FiltroUsuario" class="form-control" placeholder="Nombre del usuario" />
+                </div>
+                <div class="col-md-3">
+                    <label asp-for="FiltroFecha" class="form-label">
+                        <i class="fas fa-calendar-alt"></i> Filtrar por fecha
+                    </label>
+                    <input asp-for="FiltroFecha" type="date" class="form-control" />
+                </div>
+                <div class="col-md-1 d-flex align-items-end">
+                    <button type="submit" class="btn btn-primary w-100">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+                <div class="col-12">
+                    <a asp-page="/Prestamos/Index" class="btn btn-outline-secondary">
+                        <i class="fas fa-eraser"></i> Limpiar filtros
+                    </a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Tabla de préstamos -->
+<div class="card">
+    <div class="card-header">
+        <i class="fas fa-list"></i> Lista de Préstamos
+    </div>
+    <div class="card-body p-0">
+        <div class="table-responsive">
+            <table class="table table-hover mb-0">
+                <thead>
+                    <tr>
+                        <th><i class="fas fa-user"></i> Usuario</th>
+                        <th><i class="fas fa-book"></i> Libro</th>
+                        <th><i class="fas fa-calendar-plus"></i> Fecha Préstamo</th>
+                        <th><i class="fas fa-calendar-check"></i> Fecha Devolución</th>
+                        <th><i class="fas fa-tag"></i> Estado</th>
+                        <th><i class="fas fa-comment"></i> Comentarios</th>
+                        <th colspan="3" style="width: 180px;"><i class="fas fa-cog"></i> Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var prestamo in Model.Prestamos)
+                    {
+                        <tr>
+                            <td>
+                                <i class="fas fa-user-circle text-granate"></i>
+                                @($"{prestamo.Usuario?.Nombre} {prestamo.Usuario?.Apellidos}")
+                            </td>
+                            <td>
+                                <i class="fas fa-book text-granate"></i>
+                                @prestamo.Libro?.Titulo
+                            </td>
+                            <td>@prestamo.FechaPrestamo?.ToString("dd/MM/yyyy")</td>
+                            <td>@prestamo.FechaDevolucion?.ToString("dd/MM/yyyy")</td>
+                            <td>
+                                @{
+                                    var estadoClass = prestamo.Estado?.ToLower() switch
+                                    {
+                                        "pendiente" => "warning",
+                                        "devuelto" => "success",
+                                        "cancelado" => "danger",
+                                        _ => "secondary"
+                                    };
+                                }
+                                <span class="badge bg-@estadoClass">
+                                    <i class="fas @(prestamo.Estado?.ToLower() == "pendiente" ? "fa-clock" :
+                                                                                         prestamo.Estado?.ToLower() == "devuelto" ? "fa-check-circle" : "fa-times-circle")"></i>
+                                @prestamo.Estado
+                            </span>
+                        </td>
+                        <td>
+                            @if (!string.IsNullOrEmpty(prestamo.Comentarios))
+                                {
+                                    <span title="@prestamo.Comentarios">
+                                        <i class="fas fa-comment-dots text-muted"></i>
+                                        @(prestamo.Comentarios.Length > 30 ? prestamo.Comentarios.Substring(0, 30) + "..." : prestamo.Comentarios)
+                                    </span>
+                                }
+                                else
+                                {
+                                    <span class="text-muted">-</span>
+                                }
+                            </td>
+                            <td>
+                                <a asp-page="/Prestamos/Edit" asp-route-id="@prestamo.IdPrestamo" class="btn btn-warning btn-sm" title="Editar">
+                                    <i class="fas fa-edit"></i>
+                                </a>
+                            </td>
+                            <td>
+                                <a asp-page="/Prestamos/Estado" asp-route-id="@prestamo.IdPrestamo" class="btn btn-info btn-sm" title="Cambiar estado">
+                                    <i class="fas fa-exchange-alt"></i>
+                                </a>
+                            </td>
+                            <td>
+                                <form method="post" asp-page-handler="Delete" asp-route-id="@prestamo.IdPrestamo" onsubmit="return confirm('¿Está seguro de eliminar este préstamo?');">
+                                    <button type="submit" class="btn btn-danger btn-sm" title="Eliminar">
+                                        <i class="fas fa-trash-alt"></i>
+                                    </button>
+                                </form>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+@if (!Model.Prestamos.Any())
+{
+    <div class="text-center py-5">
+        <i class="fas fa-hand-holding-heart fa-3x text-muted mb-3"></i>
+        <p class="text-muted">No hay préstamos registrados en el sistema.</p>
+        <a asp-page="/Prestamos/Create" class="btn btn-primary">
+            <i class="fas fa-plus-circle"></i> Registrar el primer préstamo
+        </a>
+    </div>
+}
