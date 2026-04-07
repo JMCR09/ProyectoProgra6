@@ -1,3 +1,11 @@
+/*
+ * Creado por: Jose Miguel Salas Chacon
+ * Usuarios.cs - Modelo de datos para la entidad Usuario
+ * 
+ */
+
+
+
 using System.ComponentModel.DataAnnotations;
 using System.Text.Json.Serialization;
 
