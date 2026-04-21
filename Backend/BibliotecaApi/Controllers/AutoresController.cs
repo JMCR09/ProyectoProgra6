@@ -115,4 +115,23 @@ public class AutoresController : ControllerBase
             return StatusCode(500, $"Error interno del servidor: {ex.Message}");
         }
     }
+    // Método para eliminar múltiples autores
+    [HttpDelete]
+    public async Task<IActionResult> DeleteMultiple([FromBody] List<int> ids)
+    {
+        try
+        {
+            if (ids == null || !ids.Any())
+                return BadRequest("Debe proporcionar al menos un Id de autor.");
+
+            await _autorService.DeleteMultipleAsync(ids);
+            return NoContent();
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Error al eliminar múltiples autores.");
+            return StatusCode(500, $"Error interno del servidor: {ex.Message}");
+        }
+    }
+
 }

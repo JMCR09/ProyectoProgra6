@@ -23,7 +23,17 @@ public class IndexModel : PageModel
     {
         Autores = await _autorService.GetAllAsync();
     }
+    // Eliminar múltiple
+    public async Task<IActionResult> OnPostDeleteMultipleAsync(string selectedIds)
+    {
+        if (string.IsNullOrEmpty(selectedIds))
+            return RedirectToPage();
 
+        var ids = selectedIds.Split(',').Select(int.Parse).ToList();
+        await _autorService.DeleteMultipleAsync(ids);
+
+        return RedirectToPage();
+    }
     // Metodo para eliminar un autor desde la tabla
     public async Task<IActionResult> OnPostDeleteAsync(int id)
     {

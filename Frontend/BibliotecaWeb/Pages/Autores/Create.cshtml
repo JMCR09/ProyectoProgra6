@@ -1,4 +1,4 @@
-@page "{id:int?}"
+锘緻page "{id:int?}"
 @model BibliotecaWeb.Pages.Autores.CreateModel
 @{
     ViewData["Title"] = Model.Autor.IdAutor == 0 ? "Registrar Nuevo Autor" : "Editar Autor";
@@ -37,7 +37,7 @@
                 <i class="fas fa-info-circle"></i> Datos del Autor
             </div>
             <div class="card-body">
-                <form method="post">
+                <form method="post" id="autorForm">
                     <input type="hidden" asp-for="Autor.IdAutor" />
 
                     <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
@@ -79,7 +79,9 @@
                     </div>
 
                     <div class="d-flex gap-2 mt-3">
-                        <button type="submit" class="btn btn-primary">
+                        <!-- BOT脫N QUE ABRE EL MODAL DE CONFIRMACI脫N -->
+                        <button type="button" class="btn btn-primary"
+                                onclick="showConfirm('@(esCreacion ? "驴Desea confirmar la creaci贸n?" : "驴Desea confirmar la actualizaci贸n?")')">
                             <i class="fas fa-save"></i>
                             @(esCreacion ? "Guardar Autor" : "Actualizar")
                         </button>
@@ -99,8 +101,8 @@
             </div>
             <div class="card-body">
                 <p><i class="fas fa-check-circle text-granate"></i> Complete todos los campos obligatorios.</p>
-                <p><i class="fas fa-check-circle text-granate"></i> La fecha de nacimiento debe ser v醠ida.</p>
-                <p><i class="fas fa-check-circle text-granate"></i> La nacionalidad debe ser un pa韘 v醠ido.</p>
+                <p><i class="fas fa-check-circle text-granate"></i> La fecha de nacimiento debe ser v谩lida.</p>
+                <p><i class="fas fa-check-circle text-granate"></i> La nacionalidad debe ser un pa铆s v谩lido.</p>
                 <hr>
                 <small class="text-muted">
                     <i class="fas fa-info-circle"></i> Los campos marcados con * son obligatorios.
@@ -110,8 +112,88 @@
     </div>
 </div>
 
+<!-- MODAL DE CONFIRMACI脫N -->
+<div class="modal fade" id="confirmModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content shadow-lg border-0 text-center">
+            <!--  Encabezado en rojo -->
+            <div class="modal-header bg-danger text-white justify-content-center">
+                <h5 class="modal-title w-100">
+                    <i class="fas fa-exclamation-circle"></i> Confirmaci贸n
+                </h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <!--  Mensaje centrado y con la misma fuente -->
+                <p id="confirmMessage" class="fw-bold text-dark fs-5 mb-0"></p>
+            </div>
+            <div class="modal-footer justify-content-center">
+                <!-- Bot贸n No en gris -->
+                <button type="button" class="btn btn-secondary px-4" data-bs-dismiss="modal">
+                    <i class="fas fa-times"></i> No
+                </button>
+                <!--  Bot贸n S铆 en rojo -->
+                <button type="button" class="btn btn-danger px-4" id="confirmOk">
+                    <i class="fas fa-check"></i> S铆
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- MODAL DE ERROR -->
+<div class="modal fade" id="errorModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content shadow-lg border-0 text-center">
+            <!--  Encabezado en rojo -->
+            <div class="modal-header bg-danger text-white justify-content-center">
+                <h5 class="modal-title w-100 text-center">
+                    <i class="fas fa-exclamation-circle"></i> Error
+                </h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <!--  Mensaje centrado y con fuente consistente -->
+                <p id="errorMessage" class="fw-bold text-dark fs-5 mb-0"></p>
+            </div>
+            <div class="modal-footer justify-content-center">
+                <!-- Bot贸n Cerrar en gris -->
+                <button type="button" class="btn btn-secondary px-4" data-bs-dismiss="modal">
+                    <i class="fas fa-times"></i> Cerrar
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
 @section Scripts {
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
+
+    <script>
+        function showConfirm(message) {
+            document.getElementById("confirmMessage").innerText = message;
+            var modal = new bootstrap.Modal(document.getElementById("confirmModal"));
+            modal.show();
+
+            document.getElementById("confirmOk").onclick = function () {
+                const fecha = document.getElementById("Autor_FechaNacimiento").value;
+                if (fecha) {
+                    const year = new Date(fecha).getFullYear();
+                    if (year < 1753) {
+                        showError("No se permite ingresar a帽os anteriores a 1753.");
+                        return;
+                    }
+                }
+                document.getElementById("autorForm").submit();
+            };
+        }
+
+        function showError(message) {
+            document.getElementById("errorMessage").innerText = message;
+            var modal = new bootstrap.Modal(document.getElementById("errorModal"));
+            modal.show();
+        }
+    </script>
 }

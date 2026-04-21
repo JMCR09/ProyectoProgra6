@@ -15,13 +15,13 @@
 
 @if (TempData["SuccessMessage"] != null)
 {
-    <div class="alert alert-success">
+    <div class="alert alert-success text-center">
         <i class="fas fa-check-circle"></i> @TempData["SuccessMessage"]
     </div>
 }
 @if (TempData["ErrorMessage"] != null)
 {
-    <div class="alert alert-danger">
+    <div class="alert alert-danger text-center">
         <i class="fas fa-exclamation-triangle"></i> @TempData["ErrorMessage"]
     </div>
 }
@@ -34,37 +34,43 @@
         <table class="table table-hover mb-0">
             <thead>
                 <tr>
+                    <th><input type="checkbox" id="selectAll" /> Seleccionar</th>
                     <th><i class="fas fa-user"></i> Nombre</th>
                     <th><i class="fas fa-user-friends"></i> Apellidos</th>
                     <th><i class="fas fa-calendar-alt"></i> Fecha Nacimiento</th>
                     <th><i class="fas fa-globe-americas"></i> Nacionalidad</th>
-                    <th colspan="2" style="width: 150px;"><i class="fas fa-cog"></i> Acciones</th>
                 </tr>
             </thead>
             <tbody>
                 @foreach (var autor in Model.Autores)
                 {
                     <tr>
+                        <td><input type="checkbox" class="item-checkbox" value="@autor.IdAutor" /></td>
                         <td class="fw-bold">@autor.Nombre</td>
                         <td>@autor.Apellidos</td>
                         <td>@autor.FechaNacimiento?.ToString("dd/MM/yyyy")</td>
                         <td><span class="badge bg-secondary">@autor.Nacionalidad</span></td>
-                        <td>
-                            <a asp-page="/Autores/Create" asp-route-id="@autor.IdAutor" class="btn btn-warning btn-sm" title="Editar">
-                                <i class="fas fa-edit"></i>
-                            </a>
-                        </td>
-                        <td>
-                            <form method="post" asp-page-handler="Delete" asp-route-id="@autor.IdAutor" onsubmit="return confirm('¿Está seguro de eliminar este autor?');">
-                                <button type="submit" class="btn btn-danger btn-sm" title="Eliminar">
-                                    <i class="fas fa-trash-alt"></i>
-                                </button>
-                            </form>
-                        </td>
                     </tr>
                 }
             </tbody>
         </table>
+
+        <div class="mt-3 d-flex gap-2">
+            <!-- Botón global eliminar -->
+            <form id="deleteForm" method="post" asp-page-handler="DeleteMultiple">
+                <input type="hidden" id="selectedIds" name="selectedIds" />
+                <button type="button" class="btn btn-danger"
+                        onclick="showConfirm('¿Desea eliminar los autores seleccionados?', 'delete')">
+                    <i class="fas fa-trash-alt"></i> Eliminar seleccionados
+                </button>
+            </form>
+
+            <!-- Botón global actualizar -->
+            <button type="button" class="btn btn-warning"
+                    onclick="showConfirm('¿Desea actualizar el autor seleccionado?', 'update')">
+                <i class="fas fa-edit"></i> Actualizar autor
+            </button>
+        </div>
     </div>
 </div>
 
@@ -78,3 +84,99 @@
         </a>
     </div>
 }
+
+<!-- MODAL DE CONFIRMACIÓN -->
+<div class="modal fade" id="confirmModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content shadow-lg border-0 text-center">
+            <div class="modal-header bg-danger text-white justify-content-center">
+                <h5 class="modal-title w-100">
+                    <i class="fas fa-exclamation-circle"></i> Confirmación
+                </h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <p id="confirmMessage" class="fw-bold text-dark fs-5 mb-0"></p>
+            </div>
+            <div class="modal-footer justify-content-center">
+                <button type="button" class="btn btn-secondary px-4" data-bs-dismiss="modal">
+                    <i class="fas fa-times"></i> No
+                </button>
+                <button type="button" class="btn btn-danger px-4" id="confirmOk">
+                    <i class="fas fa-check"></i> Sí
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- MODAL DE ERROR ACTUALIZACIÓN -->
+<div class="modal fade" id="updateErrorModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content shadow-lg border-0 text-center">
+            <div class="modal-header bg-danger text-white justify-content-center">
+                <h5 class="modal-title w-100">
+                    <i class="fas fa-exclamation-circle"></i> Error de Actualización
+                </h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <p id="updateErrorMessage" class="fw-bold text-dark fs-5 mb-0"></p>
+            </div>
+            <div class="modal-footer justify-content-center">
+                <button type="button" class="btn btn-secondary px-4" data-bs-dismiss="modal">
+                    <i class="fas fa-times"></i> Cerrar
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        let actionType = "";
+
+        // Checkbox maestro
+        document.getElementById("selectAll").addEventListener("change", function () {
+            document.querySelectorAll(".item-checkbox").forEach(cb => cb.checked = this.checked);
+        });
+
+        // Mostrar modal de confirmación
+        function showConfirm(message, type) {
+            actionType = type;
+            document.getElementById("confirmMessage").innerText = message;
+            var modal = new bootstrap.Modal(document.getElementById("confirmModal"));
+            modal.show();
+        }
+
+        // Mostrar modal de error actualización
+        function showUpdateError(message) {
+            document.getElementById("updateErrorMessage").innerText = message;
+            var modal = new bootstrap.Modal(document.getElementById("updateErrorModal"));
+            modal.show();
+        }
+
+        // Acción al confirmar
+        document.getElementById("confirmOk").addEventListener("click", function () {
+            const selected = Array.from(document.querySelectorAll(".item-checkbox:checked"))
+                                  .map(cb => cb.value);
+
+            if (actionType === "delete") {
+                if (selected.length === 0) {
+                    return; // no hace nada si no hay seleccionados
+                }
+                document.getElementById("selectedIds").value = selected.join(",");
+                document.getElementById("deleteForm").submit();
+
+            } else if (actionType === "update") {
+                if (selected.length !== 1) {
+                    // ✅ Usamos el modal estilizado en rojo
+                    showUpdateError("Debe seleccionar exactamente un autor para actualizar.");
+                    return;
+                }
+                window.location.href = `/Autores/Create/${selected[0]}`;
+            }
+        });
+    </script>
+}
+

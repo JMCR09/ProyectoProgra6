@@ -45,4 +45,17 @@ public class AutorService
         var response = await _httpClient.DeleteAsync($"/Autores/{id}");
         response.EnsureSuccessStatusCode();
     }
+    // Método para eliminar múltiples autores
+    public async Task DeleteMultipleAsync(List<int> ids)
+    {
+        
+        var request = new HttpRequestMessage(HttpMethod.Delete, "/Autores")
+        {
+            Content = JsonContent.Create(ids) 
+        };
+
+        var response = await _httpClient.SendAsync(request);
+        response.EnsureSuccessStatusCode();
+    }
+
 }
