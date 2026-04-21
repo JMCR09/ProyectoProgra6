@@ -1,3 +1,11 @@
+/*
+ * Creado por: Jose Miguel Salas Chacon
+ *
+ * Servicio para gestionar operaciones CRUD de usuarios
+ */
+
+
+
 using BibliotecaWeb.Models;
 using System.Net.Http.Json;
 

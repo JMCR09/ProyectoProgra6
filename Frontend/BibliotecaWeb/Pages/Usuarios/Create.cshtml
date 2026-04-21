@@ -9,23 +9,39 @@
 <form method="post">
     <input type="hidden" asp-for="Usuario.IdUsuario" />
     <div class="mb-3">
-        <label asp-for="Usuario.Cedula" class="form-label"><i class="fas fa-id-card"></i> C�dula</label>
-        <input asp-for="Usuario.Cedula" class="form-control" />
+        <label asp-for="Usuario.Cedula" class="form-label"><i class="fas fa-id-card"></i> Cedula</label>
+        <input asp-for="Usuario.Cedula"
+               class="form-control"
+               maxlength="20"
+               inputmode="numeric"
+               pattern="[0-9]*"
+               oninput="this.value=this.value.replace(/[^0-9]/g,'')" />
     </div>
     <div class="mb-3">
         <label asp-for="Usuario.Nombre" class="form-label"><i class="fas fa-user"></i> Nombre</label>
-        <input asp-for="Usuario.Nombre" class="form-control" />
+        <input asp-for="Usuario.Nombre"
+               class="form-control"
+               maxlength="50"
+               oninput="this.value=this.value.replace(/[^a-zA-ZáéíóúÁÉÍÓÚñÑ ]/g,'')" />
     </div>
     <div class="mb-3">
         <label asp-for="Usuario.Apellidos" class="form-label"><i class="fas fa-user-friends"></i> Apellidos</label>
-        <input asp-for="Usuario.Apellidos" class="form-control" />
+        <input asp-for="Usuario.Apellidos"
+               class="form-control"
+               maxlength="100"
+               oninput="this.value=this.value.replace(/[^a-zA-ZáéíóúÁÉÍÓÚñÑ ]/g,'')" />
     </div>
     <div class="mb-3">
-        <label asp-for="Usuario.Telefono" class="form-label"><i class="fas fa-phone"></i> Tel�fono</label>
-        <input asp-for="Usuario.Telefono" class="form-control" />
+        <label asp-for="Usuario.Telefono" class="form-label"><i class="fas fa-phone"></i> Telefono</label>
+        <input asp-for="Usuario.Telefono"
+               class="form-control"
+               maxlength="20"
+               inputmode="numeric"
+               pattern="[0-9]*"
+               oninput="this.value=this.value.replace(/[^0-9]/g,'')" />
     </div>
     <div class="mb-3">
-        <label asp-for="Usuario.Direccion" class="form-label"><i class="fas fa-map-marker-alt"></i> Direcci�n</label>
+        <label asp-for="Usuario.Direccion" class="form-label"><i class="fas fa-map-marker-alt"></i> Direccion</label>
         <input asp-for="Usuario.Direccion" class="form-control" />
     </div>
     <div class="mb-3">
